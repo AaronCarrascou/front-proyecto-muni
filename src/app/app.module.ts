@@ -7,6 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './views/admin/admin.module';
 import { CiudadanoModule } from './views/ciudadano/ciudadano.module';
 import { FuncionarioModule } from './views/funcionario/funcionario.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FuncionarioModule } from './views/funcionario/funcionario.module';
     FuncionarioModule,
     AdminModule,
     CiudadanoModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
