@@ -16,7 +16,11 @@
               <p class="card-text d-flex align-items-center">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
                 ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-                <i class="fas fa-expand-alt fa-3x"></i>
+                <span>
+                    <i (click)="onModalInfo(modalInfoTramite)" class="fas fa-expand-alt fa-3x"></i>
+                    <h6 class="detalle">Detalle</h6>
+                </span>
+
               </p>
             
             </div>
@@ -39,3 +43,11 @@
         </div>
     </div>
 </div>
+
+
+<!-- -----------------------Modales----------------------- -->
+<ng-template #modalInfoTramite>
+    
+        <app-modal-info-tramite></app-modal-info-tramite>
+    
+</ng-template>

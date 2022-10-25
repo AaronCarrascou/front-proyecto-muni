@@ -5,6 +5,8 @@ import { TramitesComponent } from './components/tramites/tramites.component';
 import { MisTramitesComponent } from './components/mis-tramites/mis-tramites.component';
 import { RouterLink } from '@angular/router';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -16,7 +18,9 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule,
+
   ],
   exports:[
     NavBarCiudadanoComponent,

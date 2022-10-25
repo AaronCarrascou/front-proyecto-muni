@@ -1,0 +1,107 @@
+<div class="modal-header" [class]="customClass">
+    <h4 class="modal-title">
+      <i [class]="icon"></i> {{ title }} 
+      <b class="user" *ngIf="user"> {{user}} </b>
+      <!--N° orden de compra-->
+      <b class="code"*ngIf="code"> N°005897 </b>
+      <!--Status-->
+      <b class="tdbutton" *ngIf="status == 'Pendiente' && status">
+        <span class="status warning">Pendiente</span>
+      </b >
+      <b  class="tdbutton" *ngIf="status == 'Revisado' && status">
+        <span class="status success">Revisado</span>
+      </b >
+      <b  class="tdbutton" *ngIf="status == 'Anulado' && status">
+        <span class="status danger">Anulada</span>
+      </b >
+      <b  class="tdbutton" *ngIf="status == 'Aceptado' && status">
+        <span class="status success">Aceptada</span>
+      </b >
+      <b  class="tdbutton" *ngIf="status == 'Rechazado' && status">
+        <span class="status danger">Rechazada</span>
+      </b >
+  
+    </h4>
+    <div
+      class="close cursor__pointer push-right font-weight-bold"
+      aria-label="Close"
+      (click)="onCloseModal()"
+    >
+      <i class="fas fa-times"></i>
+    </div>
+  </div>
+  
+  <div class="modal-body no-padding width">
+    <ng-content></ng-content>
+  </div>
+  
+  <div class="modal-footer">
+    <div class="row">
+      <div class="col left">
+        <!--Boton de imprimir-->
+
+      </div>
+  
+      <div class="col center">
+        <!--Despacho-->
+        <div class="btn-group" dropdown>
+          <button
+            *ngIf="actionSend"
+            id="button-basic"
+            dropdownToggle
+            type="button"
+            class="btn btn-outline-success dropdown-toggle"
+            aria-controls="dropdown-basic"
+          >
+            Despacho <span class="caret"></span>
+          </button>
+          <ul
+            id="dropdown-basic"
+            *dropdownMenu
+            class="dropdown-menu"
+            role="menu"
+            aria-labelledby="button-basic"
+          >
+            <li role="menuitem">
+              <a class="dropdown-item" href="#">Despacho total</a>
+            </li>
+            <li role="menuitem">
+              <a class="dropdown-item" href="#">Despacho parcial</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col right">
+
+  
+        <!--Boton cerrar-->
+        <button
+          *ngIf="actionDefault"
+          type="button"
+          class="btn btn-outline-secondary btns close-btn"
+          data-dismiss="modal"
+          (click)="onCloseModal()"
+        >
+          {{ actionDefault }}
+        </button>
+  
+        <!--Boton de de confirmación-->
+        <button
+          *ngIf="actionSuccess"
+          type="button"
+          class="btn button-success btns success"
+          data-dismiss="modal"
+          [disabled]="activeLoading"
+          (click)="onConfirmActionSuccess()"
+        >
+          <!-- <i
+            class="fad fa-spinner fa-pulse icon-loading"
+            *ngIf="activeLoading"
+          ></i> -->
+           {{ actionSuccess }}
+          
+        </button>
+      </div>
+    </div>
+  </div>
+  
