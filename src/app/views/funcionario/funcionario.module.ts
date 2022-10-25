@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TramitesComponent } from './components/tramites/tramites.component';
+import { NavBarFuncionarioComponent } from './components/nav-bar-funcionario/nav-bar-funcionario.component';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+
 
 
 
 @NgModule({
   declarations: [
-    TramitesComponent
+    NavBarFuncionarioComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule
   ],
   exports:[
-    TramitesComponent
+    NavBarFuncionarioComponent
   ]
 })
 export class FuncionarioModule { }

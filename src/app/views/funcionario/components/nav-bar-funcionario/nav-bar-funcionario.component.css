@@ -1,0 +1,28 @@
+.dropdown-toggle{
+    color: white;
+}
+.dropdown-menu{
+    margin-top: 8px;
+    margin-left: -65px;
+
+}
+.navbar-brand{
+    font-size: 22px;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 25px;
+    border-right: 2px solid white;
+}
+
+.links{
+    margin-left: 10px ;
+    font-size: 18px;
+
+}
+
+@media (max-width: 992px) {
+    .dropdown-menu{
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+}

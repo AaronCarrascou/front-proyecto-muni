@@ -12,5 +12,4 @@ export class TramitesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
 }
