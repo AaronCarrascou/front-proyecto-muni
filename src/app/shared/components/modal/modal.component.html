@@ -1,25 +1,9 @@
 <div class="modal-header" [class]="customClass">
     <h4 class="modal-title">
       <i [class]="icon"></i> {{ title }} 
-      <b class="user" *ngIf="user"> {{user}} </b>
       <!--N° orden de compra-->
-      <b class="code"*ngIf="code"> N°005897 </b>
-      <!--Status-->
-      <b class="tdbutton" *ngIf="status == 'Pendiente' && status">
-        <span class="status warning">Pendiente</span>
-      </b >
-      <b  class="tdbutton" *ngIf="status == 'Revisado' && status">
-        <span class="status success">Revisado</span>
-      </b >
-      <b  class="tdbutton" *ngIf="status == 'Anulado' && status">
-        <span class="status danger">Anulada</span>
-      </b >
-      <b  class="tdbutton" *ngIf="status == 'Aceptado' && status">
-        <span class="status success">Aceptada</span>
-      </b >
-      <b  class="tdbutton" *ngIf="status == 'Rechazado' && status">
-        <span class="status danger">Rechazada</span>
-      </b >
+      <b class="code"*ngIf="code"> N° {{code}} </b>
+
   
     </h4>
     <div
