@@ -1,1 +1,63 @@
-<p>mis-tramites works!</p>
+<div class="search d-flex align-items-center">
+    <input type="text" class="form-control" placeholder="Buscar trámite por nombre" >
+    <button class="btn btn-primary buscar-btn">
+        <i class="fas fa-search fa-lg"></i> 
+    </button>
+   
+</div>
+
+<br>
+<div class="row">
+    <div class="col-md-7">
+
+
+        <div class="card shadow">
+            <div class="card-body">
+                <h4 class="card-title">Trámite 2</h4>
+                <h6 class="card-title">Descripción</h6>
+              <p class="card-text d-flex align-items-center">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                <span>
+                    <i (click)="onModalInfo(modalInfoTramite)" class="fas fa-expand-alt fa-3x"></i>
+                    <h6 class="detalle">Detalle</h6>
+                </span>
+
+              </p>
+            
+            </div>
+            
+        </div>
+          
+    </div>
+
+    
+
+    <div class="col-md-1">
+
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-lg bg-primary">
+            <div class="card-body ">
+                
+            
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- -----------------------Modales----------------------- -->
+<ng-template #modalInfoTramite>
+    
+        <app-modal-info-tramite
+        [tipoDeStepper]="'haciendo'"></app-modal-info-tramite>
+    
+</ng-template>

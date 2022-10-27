@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-modal-info-tramite',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modal-info-tramite.component.css']
 })
 export class ModalInfoTramiteComponent implements OnInit {
-
+  @Input() tipoDeStepper:string='';
   constructor() { }
 
   ngOnInit(): void {

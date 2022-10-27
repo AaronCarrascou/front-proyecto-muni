@@ -1,6 +1,7 @@
 <app-modal
 [title]="'Trámite'"
-[code]="'1'"
+[code]="'#'"
 [nivel]="1">
-    <app-stepper></app-stepper>
+    <app-stepper
+    [tipoDeStepper]="this.tipoDeStepper"></app-stepper>
 </app-modal>

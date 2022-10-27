@@ -9,6 +9,8 @@ import { ModalComponent } from './components/modal/modal.component';
 import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,6 +25,9 @@ import {MatIconModule} from '@angular/material/icon';
     ModalModule,
     MatStepperModule,
    MatIconModule,
+   MatFormFieldModule,
+   FormsModule,
+   ReactiveFormsModule,
   ],
   exports:[
     StepperComponent,
