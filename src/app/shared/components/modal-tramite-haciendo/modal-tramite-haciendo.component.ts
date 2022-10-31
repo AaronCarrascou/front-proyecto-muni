@@ -1,25 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component,Input, OnInit } from '@angular/core';
 import {BreakpointObserver} from '@angular/cdk/layout';
 import {StepperOrientation} from '@angular/material/stepper';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 @Component({
-  selector: 'app-stepper',
-  templateUrl: './stepper.component.html',
-  styleUrls: ['./stepper.component.css'],
-  providers:[
-    {
-      provide: STEPPER_GLOBAL_OPTIONS,
-      useValue: {displayDefaultIndicatorType: false},
-    },
-  ],
+  selector: 'app-modal-tramite-haciendo',
+  templateUrl: './modal-tramite-haciendo.component.html',
+  styleUrls: ['./modal-tramite-haciendo.component.css']
 })
-export class StepperComponent  {
-
-  @Input() tipoDeStepper:string="detalle"
+export class ModalTramiteHaciendoComponent implements OnInit {
+    
   @Input() step: number=3;
 
   stepperOrientation: Observable<StepperOrientation>;
@@ -36,10 +28,14 @@ export class StepperComponent  {
     breakpointObserver: BreakpointObserver
     ) {
 
+    
     this.stepperOrientation = breakpointObserver
       .observe('(min-width: 800px)')
       .pipe(map(({matches}) => (matches ? 'horizontal' : 'vertical')));
       
+  }
+
+  ngOnInit(): void {
   }
 
 }

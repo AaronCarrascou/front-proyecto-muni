@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { StepperComponent } from './components/stepper/stepper.component';
 import { InfoEtapaComponent } from './components/info-etapa/info-etapa.component';
 import { ModalInfoTramiteComponent } from './components/modal-info-tramite/modal-info-tramite.component';
 
@@ -11,14 +10,15 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalTramiteHaciendoComponent } from './components/modal-tramite-haciendo/modal-tramite-haciendo.component';
 
 
 @NgModule({
   declarations: [
-    StepperComponent,
     InfoEtapaComponent,
     ModalInfoTramiteComponent,
-    ModalComponent
+    ModalComponent,
+    ModalTramiteHaciendoComponent
   ],
   imports: [
     CommonModule,
@@ -30,9 +30,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
    ReactiveFormsModule,
   ],
   exports:[
-    StepperComponent,
     InfoEtapaComponent,
     ModalInfoTramiteComponent,
+    ModalTramiteHaciendoComponent,
     ModalComponent,
     
   ],

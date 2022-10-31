@@ -2,6 +2,28 @@
 [title]="'Trámite'"
 [code]="'#'"
 [nivel]="1">
-    <app-stepper
-    [tipoDeStepper]="this.tipoDeStepper"></app-stepper>
+
+
+    <mat-stepper
+    labelPosition="bottom"
+    [orientation]="(stepperOrientation | async)!">
+    <mat-step
+    [stepControl]="firstFormGroup" >
+    <ng-template matStepperIcon="edit">
+        <mat-icon>remove_red_eye</mat-icon>
+    </ng-template>
+    <app-info-etapa></app-info-etapa>
+    </mat-step>
+    <mat-step [stepControl]="firstFormGroup"  >
+    <app-info-etapa></app-info-etapa>
+    </mat-step>
+    <mat-step [stepControl]="firstFormGroup" >
+    <app-info-etapa></app-info-etapa>
+    </mat-step>
+    <mat-step [stepControl]="firstFormGroup" >
+    <app-info-etapa></app-info-etapa>
+    </mat-step>
+
+    </mat-stepper>
+
 </app-modal>
