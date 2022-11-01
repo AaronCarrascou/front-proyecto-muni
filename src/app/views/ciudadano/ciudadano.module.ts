@@ -20,6 +20,7 @@ import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
     CommonModule,
     AppRoutingModule,
     SharedModule,
+    
 
   ],
   exports:[

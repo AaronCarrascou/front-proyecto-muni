@@ -1,6 +1,7 @@
 .card{
     border: 2px solid rgb(99, 99, 99);
     padding: 8px;
+    margin-bottom: 15px;
 }
 
 h5{

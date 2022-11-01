@@ -1,28 +1,24 @@
 <app-modal
 [title]="'Trámite'"
-[code]="'#'"
+[code]="nombreTramite"
 [nivel]="1">
 
 
     <mat-stepper
     labelPosition="bottom"
     [orientation]="(stepperOrientation | async)!">
-    <mat-step
-    [stepControl]="firstFormGroup" >
-    <ng-template matStepperIcon="edit">
-        <mat-icon>remove_red_eye</mat-icon>
-    </ng-template>
-    <app-info-etapa></app-info-etapa>
-    </mat-step>
-    <mat-step [stepControl]="firstFormGroup"  >
-    <app-info-etapa></app-info-etapa>
-    </mat-step>
-    <mat-step [stepControl]="firstFormGroup" >
-    <app-info-etapa></app-info-etapa>
-    </mat-step>
-    <mat-step [stepControl]="firstFormGroup" >
-    <app-info-etapa></app-info-etapa>
-    </mat-step>
+
+        <mat-step *ngFor="let e of etapas"
+        [stepControl]="firstFormGroup" >
+        <ng-template matStepperIcon="edit">
+            <mat-icon>remove_red_eye</mat-icon>
+        </ng-template>
+
+            <app-info-etapa [etapa]="e"
+            ></app-info-etapa>
+        
+        </mat-step>
+
 
     </mat-stepper>
 

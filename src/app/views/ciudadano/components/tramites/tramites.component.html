@@ -9,15 +9,14 @@
 <br>
 <div class="row">
     <div class="col-md-7">
-        <div class="card shadow">
+        <div *ngFor="let t of tramites" class="card shadow">
             <div class="card-body">
-                <h4 class="card-title">Trámite 1</h4>
+                <h4 class="card-title">{{t.nombre}}</h4>
                 <h6 class="card-title">Descripción</h6>
               <p class="card-text d-flex align-items-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                {{t.descripcion}}
                 <span>
-                    <i (click)="onModalInfo(modalInfoTramite)" class="fas fa-expand-alt fa-3x"></i>
+                    <i (click)="onModalInfo(t.nombre ,modalInfoTramite)" class="fas fa-expand-alt fa-3x"></i>
                     <h6 class="detalle">Detalle</h6>
                 </span>
 
@@ -25,47 +24,8 @@
             
             </div>
             
-        </div>
+        </div> 
 
-        <br>
-
-        <div class="card shadow">
-            <div class="card-body">
-                <h4 class="card-title">Trámite 2</h4>
-                <h6 class="card-title">Descripción</h6>
-              <p class="card-text d-flex align-items-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-                <span>
-                    <i (click)="onModalInfo(modalInfoTramite)" class="fas fa-expand-alt fa-3x"></i>
-                    <h6 class="detalle">Detalle</h6>
-                </span>
-
-              </p>
-            
-            </div>
-            
-        </div>
-          
-        <br>
-
-        <div class="card shadow">
-            <div class="card-body">
-                <h4 class="card-title">Trámite 3</h4>
-                <h6 class="card-title">Descripción</h6>
-              <p class="card-text d-flex align-items-center">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-                <span>
-                    <i (click)="onModalInfo(modalInfoTramite)" class="fas fa-expand-alt fa-3x"></i>
-                    <h6 class="detalle">Detalle</h6>
-                </span>
-
-              </p>
-            
-            </div>
-            
-        </div>
     </div>
 
     
@@ -95,6 +55,7 @@
 <ng-template #modalInfoTramite>
     
         <app-modal-info-tramite
+        [nombreTramite]=this.nombreTramiteModal
         ></app-modal-info-tramite>
     
 </ng-template>
