@@ -16,7 +16,7 @@
               <p class="card-text d-flex align-items-center">
                 {{t.descripcion}}
                 <span>
-                    <i (click)="onModalInfo(t.nombre ,modalInfoTramite)" class="fas fa-expand-alt fa-3x"></i>
+                    <i (click)="onModalInfo(t ,modalInfoTramite)" class="fas fa-expand-alt fa-3x"></i>
                     <h6 class="detalle">Detalle</h6>
                 </span>
 
@@ -55,7 +55,7 @@
 <ng-template #modalInfoTramite>
     
         <app-modal-info-tramite
-        [nombreTramite]=this.nombreTramiteModal
+        [tramite]=this.tramiteModal
         ></app-modal-info-tramite>
     
 </ng-template>

@@ -1,23 +1,33 @@
-<mat-stepper
-[selectedIndex]="2"
-labelPosition="bottom"
-[orientation]="(stepperOrientation | async)!">
-<mat-step [completed]="true"
-[stepControl]="firstFormGroup" >
-<ng-template matStepperIcon="edit">
-    <mat-icon>done</mat-icon>
-</ng-template>
-<app-info-etapa></app-info-etapa>
-</mat-step>
-<mat-step [completed]="true"
-[stepControl]="firstFormGroup"  >
-<app-info-etapa></app-info-etapa>
-</mat-step>
-<mat-step [stepControl]="firstFormGroup" >
-<app-info-etapa></app-info-etapa>
-</mat-step>
-<mat-step [stepControl]="firstFormGroup" >
-<app-info-etapa></app-info-etapa>
-</mat-step>
+<app-modal
+[title]="'Trámite'"
+[code]="'sisis'"
+[nivel]="1">
 
-</mat-stepper>
+
+    <mat-stepper
+    [selectedIndex]="2"
+    labelPosition="bottom"
+    [orientation]="(stepperOrientation | async)!">
+    <mat-step [completed]="true"
+    [stepControl]="firstFormGroup" >
+    <ng-template matStepperIcon="edit">
+        <mat-icon>done</mat-icon>
+    </ng-template>
+
+    </mat-step>
+    <mat-step [completed]="true"
+    [stepControl]="firstFormGroup"  >
+
+    </mat-step>
+    <mat-step [stepControl]="firstFormGroup" >
+
+    </mat-step>
+    <mat-step [stepControl]="firstFormGroup" >
+
+    </mat-step>
+
+    </mat-stepper>
+
+
+
+</app-modal>

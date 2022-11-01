@@ -18,17 +18,19 @@
         <div class="col"></div>
 
         <div class="col-md-3">
-            <h5>Lista documentos etapa {{etapa.posicion}}: </h5>
+            <h5>Documentos a presentar: </h5>
             <div class="card shadow-custom">
+                <p *ngIf="documentos.length==0">
+                    Sin requisitos o documentos a presentar.
+                </p>
                 <ul>
-                    <li>Documento 1</li>
-                    <li>Documento 2</li>
-                    <li>Documento 3</li>
+                    <li *ngFor="let d of documentos" > {{d.nombre}}</li>
+
                 </ul>
             </div>
         </div>
         <div class="col-md-5">
-            <h5>Información etapa {{etapa.posicion}}:</h5>
+            <h5>Información etapa:</h5>
             <div class="card shadow-custom">
                 <ul>
                     <li>Tiempo estimado: 5 días hábiles</li>

@@ -10,7 +10,7 @@ import { TramitesService } from '../../services/tramites.service';
 export class TramitesComponent implements OnInit {
 
   tramites:iTramite[];
-  nombreTramiteModal:string='';
+  tramiteModal:iTramite;
 
   constructor(
     private tramiteService:TramitesService,
@@ -29,8 +29,8 @@ export class TramitesComponent implements OnInit {
     });
   }
 
-  onModalInfo(nombreTramiteModal:string, modalTemplate: TemplateRef<any>): void {
-    this.nombreTramiteModal=nombreTramiteModal;
+  onModalInfo(tramiteModal:iTramite, modalTemplate: TemplateRef<any>): void {
+    this.tramiteModal=tramiteModal;
     this.bsModalService.show(modalTemplate, {
       id: 1, // para poder levantar modal sobre modal se debe ir sumando un nivel.
       backdrop: true,

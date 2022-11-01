@@ -7,13 +7,14 @@ import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InfoTramiteService } from '../../services/info-tramite.service';
 import { iEtapa } from 'src/app/interfaces/iEtapa';
+import { iTramite } from 'src/app/interfaces/iTramite';
 @Component({
   selector: 'app-modal-info-tramite',
   templateUrl: './modal-info-tramite.component.html',
   styleUrls: ['./modal-info-tramite.component.css']
 })
 export class ModalInfoTramiteComponent implements OnInit {
-  @Input() nombreTramite:string='';
+  @Input() tramite:iTramite;
 
   stepperOrientation: Observable<StepperOrientation>;
 
@@ -39,7 +40,7 @@ export class ModalInfoTramiteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.infoTramiteService.getEtapas().subscribe((data:any)=>{
+    this.infoTramiteService.getEtapas(this.tramite.id_tramite).subscribe((data:any)=>{
       if(data){
         this.etapas=data;
         console.log("Etapas listadas");
