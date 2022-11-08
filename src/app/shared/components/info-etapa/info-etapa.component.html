@@ -1,46 +1,49 @@
-<div class="container">
-    <div class="row">
-        <div class="col"></div>
+<div  class="container">
+    <div *ngIf="!loading">
+        <div  class="row">
+        
 
-        <div class="col-md-8">
-            <h5>Descripción etapa {{etapa.posicion}}:</h5>
-            <div class="card shadow-custom">
-                <p>
-                    {{etapa.descripcion}}            
-                </p>
+            <div class="col-lg-8">
+                <h5>Descripción etapa {{etapa.posicion}}:</h5>
+                <div class="card shadow-custom">
+                    <p>
+                        {{etapa.descripcion}}            
+                    </p>
+                </div>
             </div>
+    
+            
+    
         </div>
-
-        <div class="col"></div>
-
+        <div class="row">
+            <div class="col"></div>
+    
+            <div class=" col-lg-3">
+                <h5>Documentos a presentar: </h5>
+                <div class="card shadow-custom">
+                    <p *ngIf="documentos.length==0">
+                        Sin requisitos o documentos a presentar.
+                    </p>
+                    <ul>
+                        <li *ngFor="let d of documentos" > {{d.nombre}}</li>
+    
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <h5>Información etapa:</h5>
+                <div class="card shadow-custom">
+                    <ul>
+                        <li>Tiempo estimado: {{etapa.dias_estimados}} días hábiles</li>
+                        <li>Encargado etapa: {{funcionario.nombre}} {{funcionario.apellidos}}</li>
+                        <li>Correo encargado: {{funcionario.email}}</li>
+                    </ul>
+                </div>
+    
+            </div>
+    
+            <div class="col"></div>
+        </div>
     </div>
-    <div class="row">
-        <div class="col"></div>
 
-        <div class="col-md-3">
-            <h5>Documentos a presentar: </h5>
-            <div class="card shadow-custom">
-                <p *ngIf="documentos.length==0">
-                    Sin requisitos o documentos a presentar.
-                </p>
-                <ul>
-                    <li *ngFor="let d of documentos" > {{d.nombre}}</li>
-
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-5">
-            <h5>Información etapa:</h5>
-            <div class="card shadow-custom">
-                <ul>
-                    <li>Tiempo estimado: 5 días hábiles</li>
-                    <li>Encargado etapa: Funcionario2</li>
-                    <li>Correo encargado: funcionario2@correo.com</li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="col"></div>
-    </div>
 </div>

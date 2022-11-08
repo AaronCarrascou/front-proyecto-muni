@@ -5,6 +5,8 @@ import { CrearTramiteComponent } from './components/crear-tramite/crear-tramite.
 import { RegistrarFuncionarioComponent } from './components/registrar-funcionario/registrar-funcionario.component';
 import { NavBarAdminComponent } from './components/nav-bar-admin/nav-bar-admin.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { CrearEtapaComponent } from './components/crear-tramite/components/crear-etapa/crear-etapa.component';
+import { CrearDescTramiteComponent } from './components/crear-tramite/components/crear-desc-tramite/crear-desc-tramite.component';
 
 
 
@@ -13,7 +15,9 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     GestionarTramitesComponent,
     CrearTramiteComponent,
     RegistrarFuncionarioComponent,
-    NavBarAdminComponent
+    NavBarAdminComponent,
+    CrearEtapaComponent,
+    CrearDescTramiteComponent
   ],
   imports: [
     CommonModule,

@@ -3,20 +3,25 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { iEtapa } from 'src/app/interfaces/iEtapa';
 import { iDocumento } from 'src/app/interfaces/iDocumento';
+import { iFuncionario } from 'src/app/interfaces/iFuncionario';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InfoTramiteService {
 
-  url = 'http://localhost:3001/api';
   constructor(private http: HttpClient) { }
 
   getEtapas(idTramite:number):Observable<iEtapa[]>{
-    return this.http.get<iEtapa[]>(this.url+'/etapa/'+idTramite);
+    return this.http.get<iEtapa[]>(environment.urlApi+'etapa/'+idTramite);
   }
 
   getDocumentos(idEtapa:number):Observable<iDocumento[]>{
-    return this.http.get<iDocumento[]>(this.url+'/documento/'+idEtapa);
+    return this.http.get<iDocumento[]>(environment.urlApi+'documento/'+idEtapa);
+  }
+
+  getFuncionarioById(idFuncionario: number):Observable<iFuncionario>{
+    return this.http.get<iFuncionario>(environment.urlApi+'funcionario/'+idFuncionario);
   }
 }
