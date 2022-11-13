@@ -1,4 +1,25 @@
-.col-lg-8{
+.title{
+    margin-bottom: 20px;
+}
+
+.col-lg-6{
     margin: auto;
-    align-items: center;
+    padding: 5px 15px 20px 15px;
+    
+}
+
+.col-md-8{
+    margin: auto;
+    padding: 5px 15px 20px 15px;
+    
+}
+
+.label{
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.card{
+    border: 2px solid rgb(99, 99, 99);
+
 }

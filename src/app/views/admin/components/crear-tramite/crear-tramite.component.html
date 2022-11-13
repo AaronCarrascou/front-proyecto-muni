@@ -6,6 +6,27 @@
 
 <div *ngIf="paso==2">
 
-    <app-crear-desc-tramite></app-crear-desc-tramite>
+    <app-crear-etapa></app-crear-etapa>
 
+</div>
+
+<div class="row ">
+    <div class="col"></div>
+    <div class="col-lg-6 col-md-8">
+
+
+
+        <button *ngIf="paso==2" class="btn btn-primary btn-derecha"> Agregar etapa <i class="fas fa-plus"></i> </button>
+
+        <button *ngIf="paso==2" class="btn btn-success btn-derecha"> Finalizar creación <i class="fas fa-save"></i> </button>
+
+        
+
+        <button (click)="onSiguientePaso()" *ngIf="paso==1" class="btn btn-primary btn-derecha"> Siguente paso <i class="fas fa-arrow-right"></i> </button>
+        
+        <button (click)="onVolverPaso()" *ngIf="paso==2" class="btn btn-primary btn-izquierda"> <i class="fas fa-arrow-left"></i> Volver</button>
+
+
+    </div>
+    <div class="col"></div>
 </div>

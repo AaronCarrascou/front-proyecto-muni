@@ -12,4 +12,12 @@ export class CrearTramiteComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSiguientePaso(){
+    this.paso++;
+  }
+
+  onVolverPaso(){
+    this.paso--;
+  }
+
 }

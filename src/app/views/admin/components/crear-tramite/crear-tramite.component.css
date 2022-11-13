@@ -1,0 +1,19 @@
+.btn-derecha{
+    margin-top: 20px;
+    margin-left: 10px;
+    float: right;
+}
+
+.btn-izquierda{
+    margin-top: 20px;
+    margin-right: 10px;
+    float: left;
+}
+
+@media (max-width: 470px) {
+    .btn-izquierda{
+        margin-top: 10px;
+        margin-left: 10px;
+        float: right;
+    }
+  }

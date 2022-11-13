@@ -1,12 +1,15 @@
 
-<app-nav-bar-funcionario *ngIf="rol=='FUNCIONARIO'"></app-nav-bar-funcionario>
+<div class="fondo">
+  <app-nav-bar-funcionario *ngIf="rol=='FUNCIONARIO'"></app-nav-bar-funcionario>
 
-<app-nav-bar-admin *ngIf="rol=='ADMIN'"></app-nav-bar-admin>
+  <app-nav-bar-admin *ngIf="rol=='ADMIN'"></app-nav-bar-admin>
+  
+  <app-nav-bar-ciudadano *ngIf="rol=='CIUDADANO'"></app-nav-bar-ciudadano>
+  
+  
+  <body>
+    <router-outlet class="router"></router-outlet>
+  </body>
+</div>
 
-<app-nav-bar-ciudadano *ngIf="rol=='CIUDADANO'"></app-nav-bar-ciudadano>
-
-
-<body>
-  <router-outlet></router-outlet>
-</body>
 

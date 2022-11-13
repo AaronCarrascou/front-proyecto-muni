@@ -7,6 +7,7 @@ import { NavBarAdminComponent } from './components/nav-bar-admin/nav-bar-admin.c
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { CrearEtapaComponent } from './components/crear-tramite/components/crear-etapa/crear-etapa.component';
 import { CrearDescTramiteComponent } from './components/crear-tramite/components/crear-desc-tramite/crear-desc-tramite.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -21,7 +22,9 @@ import { CrearDescTramiteComponent } from './components/crear-tramite/components
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     GestionarTramitesComponent,
