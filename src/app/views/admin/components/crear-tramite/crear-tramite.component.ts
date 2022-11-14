@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crear-tramite.component.css']
 })
 export class CrearTramiteComponent implements OnInit {
-  paso:number=2;
+  paso:number=1;
   constructor() { }
 
   ngOnInit(): void {

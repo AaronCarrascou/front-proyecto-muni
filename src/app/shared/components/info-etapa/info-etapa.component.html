@@ -4,7 +4,7 @@
         
 
             <div class="col-lg-8">
-                <h5>Descripción etapa {{etapa.posicion}}:</h5>
+                <h5>Descripción Etapa {{etapa.posicion}}:</h5>
                 <div class="card shadow-custom">
                     <p>
                         {{etapa.descripcion}}            
@@ -31,10 +31,10 @@
                 </div>
             </div>
             <div class="col-lg-5">
-                <h5>Información etapa:</h5>
+                <h5>Información Etapa:</h5>
                 <div class="card shadow-custom">
                     <ul>
-                        <li>Tiempo estimado: {{etapa.dias_estimados}} días hábiles</li>
+                        <li >Tiempo estimado: <span class="tiempo-estimado">{{etapa.dias_estimados}} días hábiles</span> </li>
                         <li>Encargado etapa: {{funcionario.nombre}} {{funcionario.apellidos}}</li>
                         <li>Correo encargado: {{funcionario.email}}</li>
                     </ul>

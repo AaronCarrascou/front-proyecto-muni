@@ -8,6 +8,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { CrearEtapaComponent } from './components/crear-tramite/components/crear-etapa/crear-etapa.component';
 import { CrearDescTramiteComponent } from './components/crear-tramite/components/crear-desc-tramite/crear-desc-tramite.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -24,6 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     AppRoutingModule,
     FormsModule,
+    SharedModule,
     ReactiveFormsModule
   ],
   exports:[

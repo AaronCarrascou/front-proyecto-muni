@@ -14,6 +14,7 @@ import { iTramite } from 'src/app/interfaces/iTramite';
   styleUrls: ['./modal-info-tramite.component.css']
 })
 export class ModalInfoTramiteComponent implements OnInit {
+  @Input() iniciarTramite:string;
   @Input() tramite:iTramite;
 
   stepperOrientation: Observable<StepperOrientation>;

@@ -1,8 +1,8 @@
 <div class="modal-header" [class]="customClass">
     <h4 class="modal-title">
-      <i [class]="icon"></i> {{ title }} 
+      <strong>{{ title }}: </strong> 
       <!--N° orden de compra-->
-      <b class="code"*ngIf="code">{{code}}</b>
+      <strong class="code"*ngIf="code">{{code}}</strong>
 
   
     </h4>
@@ -55,14 +55,14 @@
           </ul>
         </div>
       </div>
-      <div class="col right">
+      <div class="col right d-flex">
 
   
         <!--Boton cerrar-->
         <button
           *ngIf="actionDefault"
           type="button"
-          class="btn btn-outline-secondary btns close-btn"
+          class="btn btn-secondary btn-cerrar"
           data-dismiss="modal"
           (click)="onCloseModal()"
         >
@@ -73,15 +73,12 @@
         <button
           *ngIf="actionSuccess"
           type="button"
-          class="btn button-success btns success"
-          data-dismiss="modal"
+          class="btn btn-primary btn-iniciar"
+         
           [disabled]="activeLoading"
           (click)="onConfirmActionSuccess()"
         >
-          <!-- <i
-            class="fad fa-spinner fa-pulse icon-loading"
-            *ngIf="activeLoading"
-          ></i> -->
+
            {{ actionSuccess }}
           
         </button>

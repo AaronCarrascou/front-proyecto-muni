@@ -7,3 +7,16 @@
 .modal-title{
     text-align: center;
 }
+
+.btn-iniciar{
+    margin-left: 10px;
+    font-size: 16px;
+    
+    min-width: 130px !important;
+}
+
+.btn-cerrar{
+    margin-left: 10px;
+    font-size: 16px;
+    
+}

@@ -1,28 +1,46 @@
 <div *ngIf="!loading">
     <div class="row">
         <div class="col"></div>
-        <div class="col-lg-8 ">
+        <div class="col-lg-10 col-md-12 ">
             <div class="d-flex justify-content-center">
-                <h3>Gestión de trámites</h3>
+                <h3>Menú gestión de Trámites</h3>
             </div>
-    
-            <table class="table table-striped lista shadow">
+            
+            <div class="table-responsive">
+
+            </div>
+            <table class=" table table-striped lista shadow align-middle">
                 <thead class="bg-primary text-white thead-blue">
                   <tr>
                     
                     <th scope="col">Nombre</th>
                     <th scope="col">Descripción</th>
                     <th scope="col">Etapas</th>
-                    <th scope="col">Opciones</th>
+                    <th scope="col" style="text-align: center;">Opciones</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let t of tramites" >
                     
                     <td>{{t.nombre}}</td>
-                    <td>{{t.descripcion}}</td>
+                    <td> <p class="descripcion">{{t.descripcion}}</p></td>
                     <td>{{t.nro_etapas}}</td>
-                    <td>dsjalskd</td>
+                    <td >
+                      <div class="d-flex justify-content-center">
+                        <button (click)="onModalVerTramite(t ,modalInfoTramite)" class="btn btn-primary opcion">
+                          <i class="far fa-eye"></i>
+                        </button>
+  
+                        <button class="btn btn-success opcion">
+                          <i class="far fa-edit"></i>
+                        </button>
+  
+                        <button class="btn btn-danger opcion">
+                          <i class="far fa-trash-alt"></i>
+                        </button>
+                      </div>
+
+                    </td>
                   </tr>
                   
                 </tbody>
@@ -31,3 +49,10 @@
         <div class="col"></div>
     </div>
 </div>
+<ng-template #modalInfoTramite>
+    
+  <app-modal-info-tramite
+  [tramite]=this.tramiteModal
+  ></app-modal-info-tramite>
+
+</ng-template>

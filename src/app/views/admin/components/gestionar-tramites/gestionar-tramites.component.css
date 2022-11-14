@@ -8,3 +8,10 @@
 .btn-crear{
  float: right !important;
 }
+
+.descripcion{
+    max-width: 300px;
+}
+.opcion{
+    margin-right: 10px;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , TemplateRef} from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { iEtapa } from 'src/app/interfaces/iEtapa';
 import { iTramite } from 'src/app/interfaces/iTramite';
@@ -35,7 +35,7 @@ export class GestionarTramitesComponent implements OnInit {
      
       
     for(let i=0; i<this.tramites.length; i++){
-      this.tramites[i].nro_etapas = this.nroEtapas(this.tramites[i].id_tramite)
+      this.nroEtapas(i,this.tramites[i].id_tramite)
     }
     this.loading=false;
 
@@ -43,15 +43,26 @@ export class GestionarTramitesComponent implements OnInit {
 
   }
 
-  nroEtapas(idTramite: number):number{
+  onModalVerTramite(tramiteModal:iTramite, modalTemplate: TemplateRef<any>): void {
+    this.tramiteModal=tramiteModal;
+    this.bsModalService.show(modalTemplate, {
+      id: 1, // para poder levantar modal sobre modal se debe ir sumando un nivel.
+      backdrop: true,
+      class: 'modal-xl',
+    });
+  }
+
+  nroEtapas(i:number, idTramite: number):number{
     
      this.infoTramiteService.getEtapas(idTramite).subscribe((data:any)=>{
       if(data){
         this.etapas=data;
+        this.tramites[i].nro_etapas = this.etapas.length;
       }
      });
 
-     return this.etapas.length;
+      return this.etapas.length;
+     
   }
 
 }
