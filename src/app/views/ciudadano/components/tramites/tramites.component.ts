@@ -38,4 +38,8 @@ export class TramitesComponent implements OnInit {
     });
   }
 
+  onCloseModal(): void {
+    this.bsModalService.hide();
+  }
+
 }

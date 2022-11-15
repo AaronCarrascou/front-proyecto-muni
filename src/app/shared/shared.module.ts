@@ -6,6 +6,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 
 import { ModalInfoTramiteComponent } from './components/modal-info-tramite/modal-info-tramite.component';
 import { ModalComponent } from './components/modal/modal.component';
@@ -32,10 +33,12 @@ import { InfoEtapasComponent } from './components/modal-info-tramite/components/
     CommonModule,
     ModalModule,
     MatStepperModule,
-   MatIconModule,
-   MatFormFieldModule,
-   FormsModule,
-   ReactiveFormsModule,
+    MatIconModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ToastrModule
+   
   ],
   exports:[
     ModalInfoTramiteComponent,
