@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { InfoEtapaComponent } from './components/info-etapa/info-etapa.component';
 import { ModalInfoTramiteComponent } from './components/modal-info-tramite/modal-info-tramite.component';
 
 import { ModalComponent } from './components/modal/modal.component';
@@ -11,14 +10,23 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalTramiteHaciendoComponent } from './components/modal-tramite-haciendo/modal-tramite-haciendo.component';
+import { ModalEditarInfoTramiteComponent } from './components/modal-editar-info-tramite/modal-editar-info-tramite.component';
+import { EditarInfoEtapaComponent } from './components/modal-editar-info-tramite/components/editar-info-etapa/editar-info-etapa.component';
+import { ModalAgregarEtapaComponent } from './components/modal-agregar-etapa/modal-agregar-etapa.component';
+import { ModalEditarDescTramiteComponent } from './components/modal-editar-desc-tramite/modal-editar-desc-tramite.component';
+import { InfoEtapasComponent } from './components/modal-info-tramite/components/info-etapas/info-etapas.component';
 
 
 @NgModule({
   declarations: [
-    InfoEtapaComponent,
     ModalInfoTramiteComponent,
     ModalComponent,
-    ModalTramiteHaciendoComponent
+    ModalTramiteHaciendoComponent,
+    ModalEditarInfoTramiteComponent,
+    EditarInfoEtapaComponent,
+    ModalAgregarEtapaComponent,
+    ModalEditarDescTramiteComponent,
+    InfoEtapasComponent,
   ],
   imports: [
     CommonModule,
@@ -30,10 +38,14 @@ import { ModalTramiteHaciendoComponent } from './components/modal-tramite-hacien
    ReactiveFormsModule,
   ],
   exports:[
-    InfoEtapaComponent,
     ModalInfoTramiteComponent,
     ModalTramiteHaciendoComponent,
     ModalComponent,
+    ModalEditarInfoTramiteComponent,
+    EditarInfoEtapaComponent,
+    ModalAgregarEtapaComponent,
+    ModalEditarDescTramiteComponent,
+    InfoEtapasComponent,
     
   ],
   providers:[

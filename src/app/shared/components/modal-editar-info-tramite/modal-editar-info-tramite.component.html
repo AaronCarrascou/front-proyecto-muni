@@ -1,8 +1,7 @@
 <app-modal
-[title]="'Trámite'"
+[title]="'Editar Trámite'"
 [code]="tramite.nombre"
-[actionSuccess]="iniciarTramite"
-[actionDefault]="'Cerrar'"
+
 [nivel]="1">
 
 
@@ -13,11 +12,11 @@
         <mat-step *ngFor="let e of etapas"
         [stepControl]="firstFormGroup" >
         <ng-template matStepperIcon="edit">
-            <mat-icon>remove_red_eye</mat-icon>
+            <mat-icon>edit</mat-icon>
         </ng-template>
 
-            <app-info-etapas [etapa]="e"
-            ></app-info-etapas>
+            <app-editar-info-etapa [etapa]="e"
+            ></app-editar-info-etapa>
         
         </mat-step>
 

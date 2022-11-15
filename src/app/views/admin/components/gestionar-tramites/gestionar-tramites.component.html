@@ -31,7 +31,7 @@
                           <i class="far fa-eye"></i>
                         </button>
   
-                        <button class="btn btn-success opcion">
+                        <button (click)="onModalEditarTramite(t ,modalEditarTramite)" class="btn btn-success opcion">
                           <i class="far fa-edit"></i>
                         </button>
   
@@ -49,10 +49,21 @@
         <div class="col"></div>
     </div>
 </div>
+
+<!-- -----------------------Modales----------------------- -->
 <ng-template #modalInfoTramite>
     
   <app-modal-info-tramite
   [tramite]=this.tramiteModal
   ></app-modal-info-tramite>
+
+</ng-template>
+
+
+<ng-template #modalEditarTramite>
+    
+  <app-modal-editar-info-tramite
+  [tramite]=this.tramiteModal
+  ></app-modal-editar-info-tramite>
 
 </ng-template>

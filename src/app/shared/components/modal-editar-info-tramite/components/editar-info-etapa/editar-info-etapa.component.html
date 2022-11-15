@@ -1,0 +1,60 @@
+<div  class="container">
+    <div *ngIf="!loading">
+
+        <form [formGroup]="editarEtapaForm" >
+            <div  class="row">
+
+                <div class="col-lg-8">
+                    <h5>Descripción Etapa {{etapa.posicion}}:</h5>
+                    <textarea class="form-control descripcion" formControlName="descripcionEtapa" cols="30" rows="4">
+    
+                    </textarea>
+                </div>
+        
+                
+        
+            </div>
+            <div class="row">
+                <div class="col-xl-2"></div>
+        
+                <div class="col-xl-4 col-lg-8" style="margin-top: 0px;">
+                    <h5>Documentos a presentar: </h5>
+                    <div class="card shadow-custom">
+                        <div class="d-flex">
+                            <input class="form-control " formControlName="documentoEtapa" type="text"
+                            placeholder="Nombre del documento">
+    
+                            <button (click)="onAgregarDoc()" class="btn btn-primary btn-agregar-doc"><i class="fas fa-plus"></i></button>
+    
+                        </div>
+
+                        <ul class="lista-documentos">
+                            <li *ngFor="let d of documentosEdit" > {{d}} <i (click)="onEliminarDoc(d)" class="fas fa-trash danger"></i></li>
+        
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-8">
+                    <h5>Información Etapa:</h5>
+                    <div class="card shadow-custom">
+                        <ul>
+                            <li >Tiempo estimado: <input class="form-control" formControlName="tiempoEstimado" type="text">  </li>
+                            <li>Encargado: 
+                                <select class="form-control" formControlName="encargado">
+                                    <option value="1">Aaron</option>
+                                    <option value="2">Matias</option>
+                                </select>
+                            </li>
+                            
+                        </ul>
+                    </div>
+        
+                </div>
+        
+                <div class="col-xl-2"></div>
+            </div>
+        </form>
+
+    </div>
+
+</div>

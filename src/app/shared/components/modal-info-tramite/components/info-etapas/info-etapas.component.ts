@@ -2,14 +2,14 @@ import { Component, Input, OnInit } from '@angular/core';
 import { iDocumento } from 'src/app/interfaces/iDocumento';
 import { iEtapa } from 'src/app/interfaces/iEtapa';
 import { iFuncionario } from 'src/app/interfaces/iFuncionario';
-import { InfoTramiteService } from '../../services/info-tramite.service';
+import { InfoTramiteService } from 'src/app/shared/services/info-tramite.service';
 
 @Component({
-  selector: 'app-info-etapa',
-  templateUrl: './info-etapa.component.html',
-  styleUrls: ['./info-etapa.component.css']
+  selector: 'app-info-etapas',
+  templateUrl: './info-etapas.component.html',
+  styleUrls: ['./info-etapas.component.css']
 })
-export class InfoEtapaComponent implements OnInit {
+export class InfoEtapasComponent implements OnInit {
   @Input() etapa:iEtapa;
   documentos:iDocumento[];
   funcionario:iFuncionario;
@@ -37,8 +37,6 @@ export class InfoEtapaComponent implements OnInit {
         console.log("No se pudo cargar funcionario");
       }
     });
-
-
   }
 
 }

@@ -1,0 +1,46 @@
+.card{
+    border: 2px solid rgb(99, 99, 99);
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+h5{
+    font-size: 15px;
+}
+li{
+    font-size: 15px;
+}
+p{
+    font-size: 15px;
+}
+
+.col-lg-8{
+    margin: auto;
+}
+
+.tiempo-estimado{
+    font-size: 16px;
+    color: #DC3545;
+    text-decoration: underline;
+}
+
+.btn-agregar-doc{
+    
+    margin-left: 10px !important;
+    width: 50px !important;
+}
+
+.lista-documentos{
+    margin-top: 10px;
+}
+
+.danger{
+    color: #DC3545;
+}
+
+.descripcion{
+    border: 2px solid rgb(99, 99, 99);
+    padding: 8px;
+    margin-bottom: 15px;
+}
+

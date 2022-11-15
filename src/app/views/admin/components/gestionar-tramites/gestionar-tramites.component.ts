@@ -52,6 +52,16 @@ export class GestionarTramitesComponent implements OnInit {
     });
   }
 
+  onModalEditarTramite(tramiteModal:iTramite, modalTemplate: TemplateRef<any>): void {
+    this.tramiteModal=tramiteModal;
+    this.bsModalService.show(modalTemplate, {
+      id: 1, // para poder levantar modal sobre modal se debe ir sumando un nivel.
+      backdrop: true,
+      class: 'modal-xl',
+    });
+  }
+
+
   nroEtapas(i:number, idTramite: number):number{
     
      this.infoTramiteService.getEtapas(idTramite).subscribe((data:any)=>{
