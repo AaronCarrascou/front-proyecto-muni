@@ -8,6 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InfoTramiteService } from '../../services/info-tramite.service';
 import { iEtapa } from 'src/app/interfaces/iEtapa';
 import { iTramite } from 'src/app/interfaces/iTramite';
+import { TramiteHaciendoService } from '../../services/tramite-haciendo.service';
+import { iCrearTramiteHaciendo } from 'src/app/interfaces/post/iCrearTramiteHaciendo';
 @Component({
   selector: 'app-modal-info-tramite',
   templateUrl: './modal-info-tramite.component.html',
@@ -16,6 +18,13 @@ import { iTramite } from 'src/app/interfaces/iTramite';
 export class ModalInfoTramiteComponent implements OnInit {
   @Input() iniciarTramite:string;
   @Input() tramite:iTramite;
+
+  ciudadano_id:number=1;
+
+  crearTramiteHaciendo: iCrearTramiteHaciendo = {
+    ciudadano_id:0,
+    tramite_id:0,
+  };
 
   stepperOrientation: Observable<StepperOrientation>;
 
@@ -29,6 +38,7 @@ export class ModalInfoTramiteComponent implements OnInit {
 
   constructor(
     private infoTramiteService: InfoTramiteService,
+    private tramiteHaciendoService: TramiteHaciendoService,
     private _formBuilder: FormBuilder,
     breakpointObserver: BreakpointObserver
     ) {
@@ -50,6 +60,20 @@ export class ModalInfoTramiteComponent implements OnInit {
         console.log("Error al cargar etapas");
       }
     });
+  }
+
+  onCrearTramiteHaciendo(){
+
+    this.crearTramiteHaciendo.ciudadano_id=1;
+    this.crearTramiteHaciendo.tramite_id=this.tramite.id_tramite;
+
+    this.tramiteHaciendoService.postCrearTramiteHaciendo(this.crearTramiteHaciendo).subscribe(
+      res => {
+        console.log("se creo tramite haciendo");
+      },
+      err=> console.log(err)
+    );
+
   }
 
 }

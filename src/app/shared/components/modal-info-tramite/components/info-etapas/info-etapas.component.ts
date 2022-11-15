@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { iDocumento } from 'src/app/interfaces/iDocumento';
 import { iEtapa } from 'src/app/interfaces/iEtapa';
 import { iFuncionario } from 'src/app/interfaces/iFuncionario';
@@ -11,7 +11,7 @@ import { InfoTramiteService } from 'src/app/shared/services/info-tramite.service
 })
 export class InfoEtapasComponent implements OnInit {
   @Input() etapa:iEtapa;
-  documentos:iDocumento[];
+  documentos:iDocumento[]=[];
   funcionario:iFuncionario;
   loading:boolean=true;
 

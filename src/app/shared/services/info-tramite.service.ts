@@ -18,7 +18,7 @@ export class InfoTramiteService {
   }
 
   getDocumentos(idEtapa:number):Observable<iDocumento[]>{
-    return this.http.get<iDocumento[]>(environment.urlApi+'documento/'+idEtapa);
+    return this.http.get<iDocumento[]>(environment.urlApi+'documento/etapa/'+idEtapa);
   }
 
   getFuncionarioById(idFuncionario: number):Observable<iFuncionario>{

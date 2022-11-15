@@ -9,7 +9,6 @@ import { CiudadanoModule } from './views/ciudadano/ciudadano.module';
 import { FuncionarioModule } from './views/funcionario/funcionario.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-
 @NgModule({
   declarations: [
     AppComponent
@@ -22,7 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     CiudadanoModule,
     SharedModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
