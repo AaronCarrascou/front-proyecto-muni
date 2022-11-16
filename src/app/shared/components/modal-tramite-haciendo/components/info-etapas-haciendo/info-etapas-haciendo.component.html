@@ -1,0 +1,49 @@
+<div  class="container">
+    <div *ngIf="!loading">
+        <div  class="row">
+        
+
+            <div class="col-lg-8">
+                <h5>Descripción Etapa {{etapa.posicion}}:</h5>
+                <div class="card shadow-custom">
+                    <p>
+                        {{etapa.descripcion}}            
+                    </p>
+                </div>
+            </div>
+    
+            
+    
+        </div>
+        <div class="row">
+            <div class="col-xl-2"></div>
+    
+            <div class="col-xl-4 col-lg-8" style="margin-top: 0px;">
+                <h5>Documentos a presentar: </h5>
+                <div class="card shadow-custom">
+                    <p *ngIf="documentos.length==0">
+                        Sin requisitos o documentos a presentar.
+                    </p>
+                    <ul>
+                        <li *ngFor="let d of documentos" > {{d.nombre}}</li>
+    
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-8">
+                <h5>Información Etapa:</h5>
+                <div class="card shadow-custom">
+                    <ul>
+                        <li >Tiempo estimado: <span class="tiempo-estimado">{{etapa.dias_estimados}} días hábiles</span> </li>
+                        <li>Encargado: {{funcionario.nombre}} {{funcionario.apellidos}}</li>
+                        <li>Correo: {{funcionario.email}}</li>
+                    </ul>
+                </div>
+    
+            </div>
+    
+            <div class="col-xl-2"></div>
+        </div>
+    </div>
+
+</div>

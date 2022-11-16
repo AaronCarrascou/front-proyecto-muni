@@ -16,6 +16,7 @@ import { EditarInfoEtapaComponent } from './components/modal-editar-info-tramite
 import { ModalAgregarEtapaComponent } from './components/modal-agregar-etapa/modal-agregar-etapa.component';
 import { ModalEditarDescTramiteComponent } from './components/modal-editar-desc-tramite/modal-editar-desc-tramite.component';
 import { InfoEtapasComponent } from './components/modal-info-tramite/components/info-etapas/info-etapas.component';
+import { InfoEtapasHaciendoComponent } from './components/modal-tramite-haciendo/components/info-etapas-haciendo/info-etapas-haciendo.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { InfoEtapasComponent } from './components/modal-info-tramite/components/
     ModalAgregarEtapaComponent,
     ModalEditarDescTramiteComponent,
     InfoEtapasComponent,
+    InfoEtapasHaciendoComponent,
   ],
   imports: [
     CommonModule,

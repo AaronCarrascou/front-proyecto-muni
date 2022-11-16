@@ -1,5 +1,5 @@
 .search{
-    width: 40%;
+    width: 50%;
 }
 
 .buscar-btn{
@@ -16,6 +16,14 @@ i:hover{
 .detalle{
     font-weight:600;
     text-align: center;
+}
+
+.card{
+    margin-bottom: 20px;
+}
+
+span{
+    margin-left: 10px;
 }
 
 @media (max-width: 992px) {

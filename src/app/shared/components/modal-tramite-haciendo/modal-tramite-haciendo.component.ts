@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { iTramiteHaciendo } from 'src/app/interfaces/iTramitesHaciendo';
 @Component({
   selector: 'app-modal-tramite-haciendo',
   templateUrl: './modal-tramite-haciendo.component.html',
@@ -12,6 +13,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ModalTramiteHaciendoComponent implements OnInit {
     
+  @Input() tramiteHaciendo: iTramiteHaciendo;
   @Input() step: number=3;
 
   stepperOrientation: Observable<StepperOrientation>;
