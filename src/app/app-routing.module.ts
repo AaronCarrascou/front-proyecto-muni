@@ -5,6 +5,7 @@ import { GestionarTramitesComponent } from './views/admin/components/gestionar-t
 import { RegistrarFuncionarioComponent } from './views/admin/components/registrar-funcionario/registrar-funcionario.component';
 import { MisTramitesComponent } from './views/ciudadano/components/mis-tramites/mis-tramites.component';
 import { TramitesComponent } from './views/ciudadano/components/tramites/tramites.component';
+import { PendientesRevisionComponent } from './views/funcionario/components/pendientes-revision/pendientes-revision.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'/tramites', pathMatch:'full'},
@@ -14,6 +15,8 @@ const routes: Routes = [
   {path:'gestionar-tramites', component: GestionarTramitesComponent},
   {path:'crear-tramite', component: CrearTramiteComponent},
   {path:'registrar-funcionario', component: RegistrarFuncionarioComponent},
+
+  {path:'pendientes-revision', component: PendientesRevisionComponent}
 ];
 
 @NgModule({

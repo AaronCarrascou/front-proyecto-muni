@@ -1,0 +1,45 @@
+i:hover{
+    cursor: pointer;
+    color: rgb(66, 66, 66);
+      
+}
+
+.detalle{
+    font-weight:600;
+    text-align: right !important;
+}
+
+.card{
+    margin-bottom: 20px;
+}
+
+span{
+    margin-left: 10px;
+}
+
+@media (max-width: 992px) {
+    .search{
+        width: 80%;
+    }
+}
+
+.fa-search{
+    margin-left: 5px;
+}
+
+.fa-tasks{
+    margin: -50px 10px 10px 10px !important;
+}
+
+.fa-calendar-check{
+    margin: -30px 10px 10px 30px;
+}
+
+.revisar{
+    text-align: right !important;
+}
+
+.revisar h6{
+    margin-right: 10px;
+}
+

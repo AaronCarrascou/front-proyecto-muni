@@ -1,0 +1,64 @@
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-6">
+        <button *ngIf="mostrar=='SOLICITUDES'" (click)="mostrar='TRAMITES'" class="btn btn-danger volver"><i class="fas fa-angle-double-left"></i> 
+            Volver a trámites
+        </button> 
+        <div *ngIf="mostrar=='TRAMITES'">
+            <h4  style="margin-bottom: 20px;">Trámites en los que participas:</h4>
+
+            <div *ngIf="!loading">
+                <div *ngFor="let t of tramitesParticipando" class="card shadow">
+                    <div class="card-body">
+                        <h4 style="margin-top: -10px;" class="card-title">{{t.nombre}}</h4>
+                        <h6 class="card-title">Información</h6>
+                        <div class="row">
+                            <div class="col-6">
+                                <p>Solicitudes pendientes: <strong>{{t.solicitudes.length}}</strong> </p>
+                            </div>
+                            <div class="col-6 ">
+                                <div style="margin-bottom: -20px;" class="revisar">
+                                
+                                    <i  (click)="onVerSolicitudes(t)" class="fas fa-tasks fa-4x"></i>
+                                    <h6 style="font-size: 20px; margin-top: -10px;" >Revisar</h6>
+                                
+        
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    
+                </div> 
+            </div>
+        </div>
+
+
+        <div *ngIf="mostrar=='SOLICITUDES'">
+            
+            <app-solicitudes
+            [tramite]="tramiteSolicitudes">
+            </app-solicitudes>
+        </div>
+
+
+    </div>
+
+    
+
+    <div class="col-md-1">
+
+    </div>
+
+    <div class="col-md-3">
+        
+        <div  class="card shadow-lg bg-primary">
+            <div class="card-body ">
+                
+            
+            </div>
+            
+        </div>
+    </div>
+</div>

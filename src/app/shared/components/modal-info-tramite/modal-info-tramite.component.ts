@@ -72,11 +72,15 @@ export class ModalInfoTramiteComponent implements OnInit {
     this.crearTramiteHaciendo.ciudadano_id=1;
     this.crearTramiteHaciendo.tramite_id=this.tramite.id_tramite;
 
-    this.tramiteHaciendoService.postCrearTramiteHaciendo(this.crearTramiteHaciendo).subscribe(
-      res => {
-        
-        this.closeModalEvent.emit();
-        this.toastr.success('Su trámite se ha iniciado correctamente');
+    this.tramiteHaciendoService.postCrearTramiteHaciendo(this.crearTramiteHaciendo).subscribe((res:any)=> {
+        if(res.status==200){
+          this.closeModalEvent.emit();
+          this.toastr.warning('Verifique en pestaña Mis trámites','Trámite ya está en proceso', );
+        }else{
+          this.closeModalEvent.emit();
+          this.toastr.success('Puede seguir su el proceso en pestaña Mis trámites', 'Trámite creado correctamente' );
+        }
+  
       },
       err=> {
 

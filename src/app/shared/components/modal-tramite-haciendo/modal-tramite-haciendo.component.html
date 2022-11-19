@@ -1,33 +1,39 @@
 <app-modal
 [title]="'Trámite'"
-[code]="'sisis'"
+[code]="tramiteHaciendo.nombre"
 [nivel]="1">
 
-
+    <h4>Etapa actual: {{etapaActual}}</h4>
     <mat-stepper
-    [selectedIndex]="2"
+    [selectedIndex]="etapaActual-1"
     labelPosition="bottom"
     [orientation]="(stepperOrientation | async)!">
-    <mat-step [completed]="true"
-    [stepControl]="firstFormGroup" >
     <ng-template matStepperIcon="edit">
         <mat-icon>done</mat-icon>
     </ng-template>
-        <h1>ksjadjsadl</h1>
-    </mat-step>
-    <mat-step [completed]="true"
-    [stepControl]="firstFormGroup"  >
 
-    </mat-step>
-    <mat-step [stepControl]="firstFormGroup" >
+    <div *ngFor="let e of etapas">
 
-    </mat-step>
-    <mat-step [stepControl]="firstFormGroup" >
+        <div *ngIf="e.posicion<etapaActual">
+            <mat-step [completed]="true" >
+                
+                <app-info-etapas [etapa]="e"
+                ></app-info-etapas>
+            
+            </mat-step>
+        </div>
+        <div *ngIf="e.posicion>=etapaActual">
+            <mat-step [completed]="false" >
 
-    </mat-step>
+                <app-info-etapas [etapa]="e"
+                ></app-info-etapas>
+            
+            </mat-step>
+        </div>
+
+    </div>
 
     </mat-stepper>
-
 
 
 </app-modal>
