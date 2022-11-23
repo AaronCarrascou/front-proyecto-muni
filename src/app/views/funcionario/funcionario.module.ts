@@ -4,6 +4,7 @@ import { NavBarFuncionarioComponent } from './components/nav-bar-funcionario/nav
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { PendientesRevisionComponent } from './components/pendientes-revision/pendientes-revision.component';
 import { SolicitudesComponent } from './components/pendientes-revision/components/solicitudes/solicitudes.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -16,7 +17,8 @@ import { SolicitudesComponent } from './components/pendientes-revision/component
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   exports:[
     NavBarFuncionarioComponent

@@ -1,3 +1,5 @@
+import { iCiudadano } from "./iCiudadano";
+
 export interface iPendientesRevision{
     tramites: iTramiteParticipando[];
 }
@@ -15,5 +17,6 @@ export interface iSolicitud{
     etapa_actual: number,
     estado: number,
     fecha_inicio: string,
-    visible: boolean
+    visible: boolean,
+    ciudadano:iCiudadano;
 }

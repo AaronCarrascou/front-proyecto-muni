@@ -27,33 +27,8 @@
       </div>
   
       <div class="col center">
-        <!--Despacho-->
-        <div class="btn-group" dropdown>
-          <button
-            *ngIf="actionSend"
-            id="button-basic"
-            dropdownToggle
-            type="button"
-            class="btn btn-outline-success dropdown-toggle"
-            aria-controls="dropdown-basic"
-          >
-            Despacho <span class="caret"></span>
-          </button>
-          <ul
-            id="dropdown-basic"
-            *dropdownMenu
-            class="dropdown-menu"
-            role="menu"
-            aria-labelledby="button-basic"
-          >
-            <li role="menuitem">
-              <a class="dropdown-item" href="#">Despacho total</a>
-            </li>
-            <li role="menuitem">
-              <a class="dropdown-item" href="#">Despacho parcial</a>
-            </li>
-          </ul>
-        </div>
+
+        
       </div>
       <div class="col right d-flex">
 
@@ -82,6 +57,63 @@
            {{ actionSuccess }}
           
         </button>
+
+        <!--Boton cancelar tramite-->
+        <button
+          *ngIf="actionCancelarTramite"
+          type="button"
+          class="btn btn-danger btn-cancelar"
+          
+          [disabled]="activeLoading"
+          (click)="onCancelAction()"
+        >
+
+            {{ actionCancelarTramite }}
+            <i class="far fa-trash-alt"></i>       
+        </button>
+
+        <!--Boton rechazar etapa-->
+        <button
+          *ngIf="actionRechazarEtapa"
+          type="button"
+          class="btn btn-warning btn-rechazar"
+          
+          [disabled]="activeLoading"
+          (click)="onRejectAction()"
+        >
+
+            {{ actionRechazarEtapa }}
+            <i class="fas fa-ban"></i>        
+        </button>
+
+        <!--Boton rechazar etapa-->
+        <button
+          *ngIf="actionAvisarCiudadano"
+          type="button"
+          class="btn btn-info btn-rechazar"
+          
+          [disabled]="activeLoading"
+          (click)="onSendAction()"
+        >
+
+            {{ actionAvisarCiudadano }}
+            <i class="far fa-envelope"></i>        
+        </button>
+
+        <!--Boton confirmar etapa-->
+        <button
+        *ngIf="actionAceptarEtapa"
+        type="button"
+        class="btn btn-primary btn-aceptar"
+        
+        [disabled]="activeLoading"
+        (click)="onConfirmActionSuccess()"
+      >
+
+          {{ actionAceptarEtapa }}
+          <i class="far fa-check-circle"></i>        
+        </button>
+
       </div>
     </div>
   </div>

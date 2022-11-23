@@ -1,4 +1,5 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
+import { DateAdapter } from '@angular/material/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { iTramite } from 'src/app/interfaces/iTramite';
 import { TramitesService } from '../../services/tramites.service';
@@ -8,14 +9,16 @@ import { TramitesService } from '../../services/tramites.service';
   styleUrls: ['./tramites.component.css']
 })
 export class TramitesComponent implements OnInit {
-
+  selected: Date = null;
   tramites:iTramite[];
   tramiteModal:iTramite;
 
   constructor(
     private tramiteService:TramitesService,
     private bsModalService: BsModalService
-  ) { }
+  ) { 
+
+  }
 
   ngOnInit(): void {
     this.tramiteService.getTramites().subscribe((data:any)=>{

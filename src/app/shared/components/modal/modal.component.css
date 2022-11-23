@@ -15,6 +15,26 @@
     min-width: 130px !important;
 }
 
+.btn-aceptar{
+    margin-left: 10px;
+    font-size: 16px;
+    
+    min-width: 150px !important;
+}
+.btn-rechazar{
+    margin-left: 10px;
+    font-size: 16px;
+    color: white;
+    min-width: 160px !important;
+}
+.btn-cancelar{
+    margin-left: 10px;
+    font-size: 16px;
+    color: white;
+    min-width: 170px !important;
+}
+
+
 .btn-cerrar{
     margin-left: 10px;
     font-size: 16px;

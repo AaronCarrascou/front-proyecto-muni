@@ -7,9 +7,10 @@ import { RouterLink } from '@angular/router';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
-
-
-
+import { MatDatepickerModule} from '@angular/material/datepicker';
+import {MatCardModule} from '@angular/material/card';
+import {MatCommonModule} from '@angular/material/core';
+import { MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     NavBarCiudadanoComponent,
@@ -20,6 +21,10 @@ import { BsModalService, ModalModule } from 'ngx-bootstrap/modal';
     CommonModule,
     AppRoutingModule,
     SharedModule,
+    MatDatepickerModule,
+    MatCardModule,
+    MatNativeDateModule,
+    MatCommonModule
     
 
   ],

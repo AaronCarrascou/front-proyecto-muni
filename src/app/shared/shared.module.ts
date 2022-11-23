@@ -7,6 +7,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule} from '@angular/material/datepicker';
+import {MatCardModule} from '@angular/material/card';
+
 
 import { ModalInfoTramiteComponent } from './components/modal-info-tramite/modal-info-tramite.component';
 import { ModalComponent } from './components/modal/modal.component';
@@ -17,6 +21,8 @@ import { ModalAgregarEtapaComponent } from './components/modal-agregar-etapa/mod
 import { ModalEditarDescTramiteComponent } from './components/modal-editar-desc-tramite/modal-editar-desc-tramite.component';
 import { InfoEtapasComponent } from './components/modal-info-tramite/components/info-etapas/info-etapas.component';
 import { InfoEtapasHaciendoComponent } from './components/modal-tramite-haciendo/components/info-etapas-haciendo/info-etapas-haciendo.component';
+import { ModalGestionarSolicitudComponent } from './components/modal-gestionar-solicitud/modal-gestionar-solicitud.component';
+import { CalendarioComponent } from './components/calendario/calendario.component';
 
 
 @NgModule({
@@ -30,6 +36,8 @@ import { InfoEtapasHaciendoComponent } from './components/modal-tramite-haciendo
     ModalEditarDescTramiteComponent,
     InfoEtapasComponent,
     InfoEtapasHaciendoComponent,
+    ModalGestionarSolicitudComponent,
+    CalendarioComponent,
   ],
   imports: [
     CommonModule,
@@ -39,7 +47,10 @@ import { InfoEtapasHaciendoComponent } from './components/modal-tramite-haciendo
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
-    ToastrModule
+    ToastrModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatCardModule
    
   ],
   exports:[
@@ -51,6 +62,8 @@ import { InfoEtapasHaciendoComponent } from './components/modal-tramite-haciendo
     ModalAgregarEtapaComponent,
     ModalEditarDescTramiteComponent,
     InfoEtapasComponent,
+    ModalGestionarSolicitudComponent,
+    CalendarioComponent
     
   ],
   providers:[

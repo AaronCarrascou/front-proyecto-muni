@@ -1,0 +1,42 @@
+<app-modal
+[title]="'Gestionar solicitud'"
+[code]="solicitud.id_ciudadano_tramite.toString()"
+[actionAceptarEtapa]="'Aceptar Etapa'"
+[actionRechazarEtapa]="'Rechazar Etapa'"
+[actionAvisarCiudadano]="'Enviar aviso'"
+[actionCancelarTramite]="'Cancelar Trámite'"
+[nivel]="1">
+    <div class="content">
+        <div class="row">
+            <div class="col-xl-6">
+                <p style="margin-bottom: -10px;">
+                   <strong>Etapa: </strong>{{infoEtapaActual.nombre}}
+                </p> <br>
+                <p style="margin-top: 0px; margin-bottom: -10px;">
+                    <strong>Ciudadano: </strong>{{ciudadano.nombre}} {{ciudadano.apellidos}}
+                </p> <br>
+                <p style="margin-top: 0px;">
+                    <strong>Rut: </strong>{{ciudadano.rut_ciudadano}}
+                </p>
+            
+            </div>
+            <div class="col-xl-6">
+                <p style="margin-bottom: 5px;"><strong >Documentos:</strong></p>
+                <ul>
+                    <li *ngFor="let d of documentos"> <input class="form-check-input" type="checkbox"> {{d.nombre}}</li>
+    
+                </ul>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div  class="col-xl-12">
+                <p style="margin-bottom: 7px;"> <strong >Comentario:</strong> </p>
+                <textarea class="form-control" id="" cols="30" rows="4" placeholder="Escribe un comentario respecto a la Etapa"></textarea>
+            </div>
+
+        </div>
+    </div>
+
+
+</app-modal>

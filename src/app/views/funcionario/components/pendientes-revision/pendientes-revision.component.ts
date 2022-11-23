@@ -22,7 +22,7 @@ export class PendientesRevisionComponent implements OnInit {
   ngOnInit(): void {
     this.funcionarioService.getPendientesRevision(1).subscribe((data:any)=>{
       if(data){
-        this.tramitesParticipando=data;
+        this.tramitesParticipando=data.data;
         this.loading=false;
       }
     })
