@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { iCiudadano } from 'src/app/interfaces/iCiudadano';
 import { iSolicitud, iTramiteParticipando } from 'src/app/interfaces/iPendientesDeRevision';
@@ -19,7 +20,9 @@ export class SolicitudesComponent implements OnInit {
 
   constructor(
     private dataService: DataService,
-    private bsModalService: BsModalService
+    private bsModalService: BsModalService,
+    private router: Router,
+    private route:ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -46,6 +49,11 @@ export class SolicitudesComponent implements OnInit {
 
   onCloseModal(): void {
     this.bsModalService.hide();
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+
+    this.router.navigate(['./'], {
+      relativeTo: this.route, queryParamsHandling: "merge"
+    })
   }
 
 }

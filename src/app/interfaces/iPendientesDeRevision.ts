@@ -17,6 +17,9 @@ export interface iSolicitud{
     etapa_actual: number,
     estado: number,
     fecha_inicio: string,
+    comentario: string,
+    fecha_etapa_actual: string,
     visible: boolean,
     ciudadano:iCiudadano;
+
 }

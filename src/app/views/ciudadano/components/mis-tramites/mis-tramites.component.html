@@ -8,7 +8,10 @@
 <h4 style="margin-bottom: 15px;">Tus trámites en proceso:</h4>
 <div class="row">
     <div class="col-md-7">
-
+        <div *ngIf="tramiteHaciendo.length==0">
+            <h6>No posee trámites en proceso, ver trámites disponibles <a routerLink="/">aquí <i class="fas fa-hand-point-up"></i></a> </h6>
+                
+        </div>
 
         <div *ngFor="let t of tramiteHaciendo" class="card shadow">
             <div class="card-body">
@@ -18,7 +21,7 @@
                 {{t.descripcion}} 
                 <span>
                     <i (click)="onModalInfo(t, modalInfoTramite)" class="fas fa-expand-alt fa-3x"></i>
-                    <h6 class="detalle">Detalle</h6>
+                    <h6 class="detalle">Revisar</h6>
                 </span>
 
               </p>

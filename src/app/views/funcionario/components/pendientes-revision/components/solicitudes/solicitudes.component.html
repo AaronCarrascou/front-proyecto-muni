@@ -1,10 +1,13 @@
 
 <h4  style="margin-bottom: 20px; margin-top: 10px;">
-    Solicitudes de: {{tramite.nombre}} 
+    Solicitudes: {{tramite.nombre}} 
     
 </h4>
             
 <div *ngIf="!loading">
+    <div *ngIf="solicitudes.length==0">
+        <h6>No posee solicitudes pendientes <i class="fas fa-thumbs-up"></i></h6>
+    </div>
     <div *ngFor="let s of solicitudes"  class="card shadow">
         <div class="card-body">
             <h5 style="margin-top: -10px;" class="card-title">Solicitud: {{s.id_ciudadano_tramite}}</h5>
@@ -36,6 +39,7 @@
     <app-modal-gestionar-solicitud
     [ciudadano]="ciudadanoModal"
     [solicitud]="solicitudModal"
+    (closeModalEvent)="onCloseModal()"
     >
     </app-modal-gestionar-solicitud>
 

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { environment } from 'src/environments/environment.prod';
 import { iCrearTramiteHaciendo } from 'src/app/interfaces/post/iCrearTramiteHaciendo';
+import { iAceptarEtapa } from 'src/app/interfaces/post/iAceptarEtapa';
 
 @Injectable({
     providedIn: 'root'
@@ -14,6 +15,10 @@ import { iCrearTramiteHaciendo } from 'src/app/interfaces/post/iCrearTramiteHaci
   
     postCrearTramiteHaciendo(crearTramiteHaciendo: iCrearTramiteHaciendo){
       return this.http.post(environment.urlApi+'ciudadano-tramite/crear', crearTramiteHaciendo);
+    }
+
+    putAceptarEtapa(aceptarEtapa:iAceptarEtapa, idTramiteHaciendo:number){
+      return this.http.put(environment.urlApi+'ciudadano-tramite/actualizar/'+idTramiteHaciendo, aceptarEtapa);
     }
   
 

@@ -1,9 +1,10 @@
 <app-modal
 [title]="'Trámite'"
 [code]="tramiteHaciendo.nombre"
+[actionCancelarTramite]="'Dejar Trámite'"
 [nivel]="1">
 
-    <h4>Etapa actual: {{etapaActual}}</h4>
+    <h5>Etapa actual: {{etapaActual}}</h5>
     <mat-stepper
     [selectedIndex]="etapaActual-1"
     labelPosition="bottom"

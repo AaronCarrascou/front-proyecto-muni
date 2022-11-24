@@ -24,7 +24,7 @@ export class MisTramitesComponent implements OnInit {
   ngOnInit(): void {
     this.tramitesService.getTramitesHaciendo(1).subscribe((data:any)=>{
       if(data){
-        this.tramitesHaciendo=data;
+        this.tramitesHaciendo=data.data;
         this.tramiteHaciendo=this.tramitesHaciendo.tramites;
         console.log("se listo todoo");
       }else{

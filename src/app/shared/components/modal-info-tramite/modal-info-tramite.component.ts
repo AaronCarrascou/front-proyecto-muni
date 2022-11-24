@@ -83,7 +83,7 @@ export class ModalInfoTramiteComponent implements OnInit {
   
       },
       err=> {
-
+        this.closeModalEvent.emit();
         this.toastr.error('Error al inciar trámite');
       }
     );
