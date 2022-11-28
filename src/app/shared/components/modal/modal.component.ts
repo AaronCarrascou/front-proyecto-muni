@@ -7,8 +7,6 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 })
 export class ModalComponent{
 
-  @Input() user: String='';
-  @Input() icon: string='';
   @Input() title: string='';
   @Input() status: string='';
   @Input() code: string='';
@@ -17,6 +15,8 @@ export class ModalComponent{
   @Input() actionRechazarEtapa: string='';
   @Input() actionAvisarCiudadano: string='';
   @Input() actionCancelarTramite: string='';
+  @Input() actionConfirm: string='';
+  @Input() actionDeny: string='';
   @Input() actionDefault: string='';
   @Input() actionSend : string='';
   @Input() nivel: number=0; // para poder levantar modal sobre modal se debe ir sumando un nivel.
@@ -26,6 +26,8 @@ export class ModalComponent{
   @Output() handleRejectAction: EventEmitter<any> = new EventEmitter();
   @Output() handleSendAction: EventEmitter<any> = new EventEmitter();
   @Output() handleCancelAction: EventEmitter<any> = new EventEmitter();
+  @Output() handleConfirmAction: EventEmitter<any> = new EventEmitter();
+  @Output() handleDenyAction: EventEmitter<any> = new EventEmitter();
   constructor(
     private bsModalService: BsModalService
   ) { }
@@ -47,5 +49,13 @@ export class ModalComponent{
   onCancelAction(): void {
     this.handleCancelAction.emit();
   }
+  onConfirmAction(): void {
+    this.handleConfirmAction.emit();
+    this.bsModalService.hide(this.nivel);
+  }
+  onDenyAction(): void {
+    this.handleDenyAction.emit();
+  }
+  
 
 }

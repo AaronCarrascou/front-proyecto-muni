@@ -12,6 +12,7 @@ export class TramitesComponent implements OnInit {
   selected: Date = null;
   tramites:iTramite[];
   tramiteModal:iTramite;
+  loading:boolean=true;
 
   constructor(
     private tramiteService:TramitesService,
@@ -25,6 +26,7 @@ export class TramitesComponent implements OnInit {
       if(data){
         this.tramites=data;
         console.log("se listo todoo")
+        this.loading=false;
       }else{
         console.log("no se listo nada")
       }

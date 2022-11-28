@@ -1,6 +1,6 @@
 <div class="modal-header" [class]="customClass">
     <h4 class="modal-title">
-      <strong>{{ title }}: </strong> 
+      <strong *ngIf="title">{{ title }}: </strong> 
       <!--N° orden de compra-->
       <strong class="code"*ngIf="code">{{code}}</strong>
 
@@ -115,6 +115,38 @@
           {{ actionAceptarEtapa }}
           <i class="far fa-check-circle"></i>        
         </button>
+
+
+<!-- --------------------Botones confirmacion-------------------------         -->
+        <!--Boton cancelar-->
+        <button
+        *ngIf="actionDeny"
+        type="button"
+        class="btn btn-primary btns-confirm"
+        
+        [disabled]="activeLoading"
+        (click)="onCloseModal()"
+      >
+
+          {{ actionDeny }}
+                
+        </button>
+
+        <!--Boton confirmar-->
+        <button
+        *ngIf="actionConfirm"
+        type="button"
+        class="btn btn-danger btns-confirm"
+        
+        [disabled]="activeLoading"
+        (click)="onConfirmAction()"
+      >
+
+          {{ actionConfirm }}
+               
+        </button>
+
+
 
       </div>
     </div>

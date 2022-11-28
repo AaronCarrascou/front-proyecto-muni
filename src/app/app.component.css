@@ -4,3 +4,11 @@ body{
     
 }
 
+.opciones{
+    margin-top: 20vh;
+}
+
+.opcion{
+    height: 150px;
+    width: 150px;
+}

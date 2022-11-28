@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class AppComponent implements OnInit {
   title = 'front-proyecto-muni';
-  rol:string="FUNCIONARIO";
+  rol:string='';
   constructor() { }
 
   ngOnInit(): void {

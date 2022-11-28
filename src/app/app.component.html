@@ -8,7 +8,33 @@
   
   
   <body>
-    <router-outlet class="router"></router-outlet>
+    <div *ngIf="rol==''" class="row">
+      <div style="background-color: #0D6EFD; height:20px;" class="col"></div>
+    </div>
+    <div class="opciones" *ngIf="rol==''">
+
+      <div class="row">
+        <div class="col"></div>
+        <div class="col">
+          <button (click)="rol='CIUDADANO'" class="btn btn-primary opcion">
+            Ciudadano
+          </button>
+        </div>
+        <div class="col">
+          <button (click)="rol='FUNCIONARIO'" class="btn btn-primary opcion">
+            Funcionario
+          </button>
+        </div>
+        <div class="col">
+          <button (click)="rol='ADMIN'" class="btn btn-primary opcion">
+            Administrador
+          </button>
+        </div>
+
+        <div class="col"></div>
+      </div>
+    </div>
+    <router-outlet *ngIf="rol!=''" class="router"></router-outlet>
   </body>
 </div>
 

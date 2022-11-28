@@ -12,5 +12,7 @@ export interface iTramiteHaciendo{
 }
 
 export interface iEtapaActual{
-    etapa_actual:number
+    id_ciudadano_tramite:number,
+    etapa_actual:number,
+    fecha_etapa_actual:string
 }

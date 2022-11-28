@@ -6,7 +6,7 @@
    
 </div> -->
 <h4 style="margin-bottom: 15px;">Tus trámites en proceso:</h4>
-<div class="row">
+<div *ngIf="!loading" class="row">
     <div class="col-md-7">
         <div *ngIf="tramiteHaciendo.length==0">
             <h6>No posee trámites en proceso, ver trámites disponibles <a routerLink="/">aquí <i class="fas fa-hand-point-up"></i></a> </h6>
@@ -39,13 +39,11 @@
     </div>
 
     <div class="col-md-3">
-        <div class="card shadow-lg bg-primary">
-            <div class="card-body ">
+
                 
-            
-            </div>
-            
-        </div>
+        <app-calendario class="shadow-lg"></app-calendario>
+    
+
     </div>
 </div>
 
@@ -60,6 +58,7 @@
     
         <app-modal-tramite-haciendo
         [tramiteHaciendo]="this.tramiteModal"
+        (closeModalEvent)="onCloseModal()"
         ></app-modal-tramite-haciendo>
     
 </ng-template>

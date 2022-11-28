@@ -1,4 +1,5 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { iEtapaActual, iTramiteHaciendo, iTramitesHaciendo } from 'src/app/interfaces/iTramitesHaciendo';
 import { TramitesService } from '../../services/tramites.service';
@@ -13,12 +14,15 @@ export class MisTramitesComponent implements OnInit {
   tramitesHaciendo: iTramitesHaciendo;
   tramiteHaciendo:iTramiteHaciendo[];
 
-
   tramiteModal:iTramiteHaciendo;
+
+  loading:boolean=true;
 
   constructor(
     private tramitesService:TramitesService,
-    private bsModalService: BsModalService
+    private bsModalService: BsModalService,
+    private router: Router,
+    private route:ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -27,6 +31,7 @@ export class MisTramitesComponent implements OnInit {
         this.tramitesHaciendo=data.data;
         this.tramiteHaciendo=this.tramitesHaciendo.tramites;
         console.log("se listo todoo");
+        this.loading=false;
       }else{
         console.log("no se listo nada")
       }
@@ -40,6 +45,15 @@ export class MisTramitesComponent implements OnInit {
       backdrop: true,
       class: 'modal-xl',
     });
+  }
+
+  onCloseModal(): void {
+    this.bsModalService.hide();
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+
+    this.router.navigate(['./'], {
+      relativeTo: this.route, queryParamsHandling: "merge"
+    })
   }
 
 

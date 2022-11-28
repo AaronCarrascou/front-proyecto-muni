@@ -40,3 +40,12 @@
     font-size: 16px;
     
 }
+
+.btns-confirm{
+
+    margin-left: 10px;
+    font-size: 16px;
+    color: white;
+    min-width: 100px !important;
+
+}
