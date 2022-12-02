@@ -7,16 +7,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-              <li class="nav-item links">
-                <a class={{active1}} (click)="onActive1()"  routerLink="/tramites"> Trámites</a>
+              <li  class="nav-item links">
+                <a [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}" class="nav-link" routerLink="/tramites"> Trámites</a>
               </li>
-              <li class="nav-item links">
-                <a class={{active2}} (click)="onActive2()" routerLink="/mis-tramites">Mis trámites</a>
+              <li  class="nav-item links">
+                <a [routerLinkActive]="'active'"  class="nav-link" routerLink="/mis-tramites">Mis trámites</a>
               </li>
 
             </ul>
             <ul class="navbar-nav me-2 ">
-              <li class="nav-item dropdown">
+              <li  class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Opciones
                   </a>

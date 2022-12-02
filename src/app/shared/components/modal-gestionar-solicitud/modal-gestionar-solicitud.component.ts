@@ -22,6 +22,9 @@ export class ModalGestionarSolicitudComponent implements OnInit {
   documentos:iDocumento[];
   loading:boolean=true;
 
+  finalizar:string='';
+  aceptar:string='';
+
   aceptarEtapa:iAceptarEtapa={
     etapa_actual:0,
     estado:0,
@@ -32,13 +35,23 @@ export class ModalGestionarSolicitudComponent implements OnInit {
   constructor(
     private toastr: ToastrService,
     private infoTramiteService: InfoTramiteService,
-    private tramiseHaciendoService:TramiteHaciendoService
+    private tramiteHaciendoService:TramiteHaciendoService
   ) { }
 
   ngOnInit(): void {
     this.infoTramiteService.getEtapas(this.solicitud.tramite_id).subscribe((data:any)=>{
       if(data){
         this.etapas=data;
+
+        //verifica si es el paso final
+        if(this.etapas.length==this.solicitud.etapa_actual){
+          this.finalizar='Finalizar Trámite';
+          this.aceptar='';
+        }else{
+          this.finalizar='';
+          this.aceptar='Aceptar Etapa';      
+        }
+        //Toma la info de etapa actual
         for(let i=0; i<this.etapas.length; i++){
           if(this.etapas[i].posicion==this.solicitud.etapa_actual){
             this.infoEtapaActual=this.etapas[i];
@@ -61,6 +74,8 @@ export class ModalGestionarSolicitudComponent implements OnInit {
   };
 
   onAceptarEtapa(){
+    this.loading=true;
+
     this.aceptarEtapa.etapa_actual=this.solicitud.etapa_actual + 1;
     this.aceptarEtapa.comentario=this.comentario;
     this.aceptarEtapa.estado=0;
@@ -68,7 +83,7 @@ export class ModalGestionarSolicitudComponent implements OnInit {
     console.log(this.aceptarEtapa.comentario);
     console.log(this.aceptarEtapa.estado);
 
-    this.tramiseHaciendoService.putAceptarEtapa(this.aceptarEtapa, this.solicitud.id_ciudadano_tramite).subscribe((res:any)=>{
+    this.tramiteHaciendoService.putAceptarEtapa(this.aceptarEtapa, this.solicitud.id_ciudadano_tramite).subscribe((res:any)=>{
       if(res.status==200){
         this.closeModalEvent.emit();
         this.toastr.success('Etapa aceptada correctamente' );
@@ -80,6 +95,31 @@ export class ModalGestionarSolicitudComponent implements OnInit {
       
     })
 
+  }
+
+  onFinalizarTramite(){
+    this.loading=true;
+    this.tramiteHaciendoService.putFinalizarTramite(this.solicitud.id_ciudadano_tramite).subscribe((res:any)=>{
+      if(res.status==200){
+        this.closeModalEvent.emit();
+        this.toastr.success('Trámite finalizado correctamente!' );
+      }else{
+        this.closeModalEvent.emit();
+        this.toastr.error('Error al finalizar trámite' ); 
+      }
+    });
+  }
+
+  onCancelarTramite(){
+    this.tramiteHaciendoService.putAbandonarTramite(this.solicitud.id_ciudadano_tramite).subscribe((res:any)=>{
+      if(res.status==200){
+        this.closeModalEvent.emit();
+        this.toastr.warning('Trámite cancelado' );
+      }else{
+        this.closeModalEvent.emit();
+        this.toastr.error('Error al cancelar el Trámite' );
+      }
+    });
   }
 
   

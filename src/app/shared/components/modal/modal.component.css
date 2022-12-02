@@ -21,6 +21,13 @@
     
     min-width: 150px !important;
 }
+.btn-finalizar{
+    margin-left: 10px;
+    font-size: 16px;
+    color: white;
+    min-width: 170px !important; 
+}
+
 .btn-rechazar{
     margin-left: 10px;
     font-size: 16px;

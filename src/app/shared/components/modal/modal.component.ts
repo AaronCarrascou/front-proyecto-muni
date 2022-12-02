@@ -19,6 +19,7 @@ export class ModalComponent{
   @Input() actionDeny: string='';
   @Input() actionDefault: string='';
   @Input() actionSend : string='';
+  @Input() actionFinalizarTramite : string='';
   @Input() nivel: number=0; // para poder levantar modal sobre modal se debe ir sumando un nivel.
   @Input() activeLoading: boolean=false;
   @Input() customClass: string='';
@@ -28,6 +29,7 @@ export class ModalComponent{
   @Output() handleCancelAction: EventEmitter<any> = new EventEmitter();
   @Output() handleConfirmAction: EventEmitter<any> = new EventEmitter();
   @Output() handleDenyAction: EventEmitter<any> = new EventEmitter();
+  @Output() handleFinalizarAction: EventEmitter<any> = new EventEmitter();
   constructor(
     private bsModalService: BsModalService
   ) { }
@@ -55,6 +57,9 @@ export class ModalComponent{
   }
   onDenyAction(): void {
     this.handleDenyAction.emit();
+  }
+  onFinalizarAction(): void {
+    this.handleFinalizarAction.emit();
   }
   
 

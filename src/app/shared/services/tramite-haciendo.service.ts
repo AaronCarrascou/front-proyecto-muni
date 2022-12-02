@@ -20,6 +20,12 @@ import { iAceptarEtapa } from 'src/app/interfaces/post/iAceptarEtapa';
     putAceptarEtapa(aceptarEtapa:iAceptarEtapa, idTramiteHaciendo:number){
       return this.http.put(environment.urlApi+'ciudadano-tramite/actualizar/'+idTramiteHaciendo, aceptarEtapa);
     }
+
+    putFinalizarTramite(idTramiteHaciendo:number){
+      const data= new FormData();
+      data.append('idTramiteCiudadano', idTramiteHaciendo.toString());
+      return this.http.put(environment.urlApi+'ciudadano-tramite/finalizar/'+idTramiteHaciendo, data);
+    }
   
     putAbandonarTramite(idTramiteHaciendo:number){
       const data= new FormData();

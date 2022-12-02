@@ -1,14 +1,18 @@
 <app-modal
 [title]="'Gestionar solicitud'"
 [code]="solicitud.id_ciudadano_tramite.toString()"
-[actionAceptarEtapa]="'Aceptar Etapa'"
+[actionAceptarEtapa]="aceptar"
+[actionFinalizarTramite]="finalizar"
 [actionRechazarEtapa]="'Rechazar Etapa'"
 [actionAvisarCiudadano]="'Enviar aviso'"
 [actionCancelarTramite]="'Cancelar Trámite'"
 (handleConfirmActionSuccess)="onAceptarEtapa()"
+(handleFinalizarAction)="onFinalizarTramite()"
+(handleCancelAction)="onCancelarTramite()"
+
 [nivel]="1">
     <div class="content">
-        <div class="row">
+        <div *ngIf="!loading" class="row">
             <div class="col-xl-6 col-lg-6">
                 <p style="margin-bottom: -10px;">
                    <strong>Etapa: </strong>{{infoEtapaActual.nombre}}
@@ -35,14 +39,20 @@
             </div>
         </div>
     
-        <div class="row">
+        <div *ngIf="!loading" class="row">
             <div  class="col-xl-12">
                 <p style="margin-bottom: 7px;"> <strong >Comentario:</strong> </p>
                 <textarea [(ngModel)]="comentario" class="form-control" id="" cols="30" rows="4" placeholder="Escribe un comentario respecto a la Etapa"></textarea>
             </div>
 
         </div>
+
+        <div *ngIf="loading">
+            <div class="lds-dual-ring"></div>
+        </div>
+
     </div>
 
+    
 
 </app-modal>

@@ -16,19 +16,19 @@
       <div class="row">
         <div class="col"></div>
         <div class="col">
-          <button (click)="rol='CIUDADANO'" class="btn btn-primary opcion">
+          <a (click)="rol='CIUDADANO'" class="btn btn-primary opcion" routerLink="/tramites">
             Ciudadano
-          </button>
+          </a>
         </div>
         <div class="col">
-          <button (click)="rol='FUNCIONARIO'" class="btn btn-primary opcion">
+          <a (click)="rol='FUNCIONARIO'" class="btn btn-primary opcion" routerLink="/pendientes-revision">
             Funcionario
-          </button>
+          </a>
         </div>
         <div class="col">
-          <button (click)="rol='ADMIN'" class="btn btn-primary opcion">
+          <a (click)="rol='ADMIN'" class="btn btn-primary opcion" routerLink="/gestionar-tramites">
             Administrador
-          </button>
+          </a>
         </div>
 
         <div class="col"></div>

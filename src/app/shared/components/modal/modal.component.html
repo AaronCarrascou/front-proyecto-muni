@@ -116,6 +116,20 @@
           <i class="far fa-check-circle"></i>        
         </button>
 
+        <!--Boton confirmar etapa-->
+        <button
+        *ngIf="actionFinalizarTramite"
+        type="button"
+        class="btn btn-success btn-finalizar"
+        
+        [disabled]="activeLoading"
+        (click)="onFinalizarAction()"
+      >
+
+          {{ actionFinalizarTramite }}
+          <i class="far fa-check-circle"></i>        
+        </button>
+
 
 <!-- --------------------Botones confirmacion-------------------------         -->
         <!--Boton cancelar-->

@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
               <li class="nav-item links">
-                <a class="nav-link active" aria-current="page" routerLink="/pendientes-revision">Pendientes de revisión</a>
+                <a [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}" class="nav-link" routerLink="/pendientes-revision">Pendientes de revisión</a>
               </li>
 
             </ul>
