@@ -13,6 +13,7 @@ import { CiudadanoModule } from './views/ciudadano/ciudadano.module';
 import { FuncionarioModule } from './views/funcionario/funcionario.module';
 import {MatCommonModule} from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 @NgModule({
   declarations: [
     AppComponent
@@ -30,6 +31,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDatepickerModule,
     MatCommonModule,
     MatNativeDateModule,
+    PaginationModule.forRoot(),
     ToastrModule.forRoot(),
 
   ],

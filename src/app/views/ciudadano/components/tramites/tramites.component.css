@@ -31,6 +31,14 @@ span{
         width: 80%;
     }
 }
+@media (max-width: 767px) {
+    .search{
+        width: 99%;
+    }
+    .calendario{
+        display: none;
+    }
+}
 
 .fa-search{
     margin-left: 5px;
@@ -43,3 +51,4 @@ span{
 .fa-calendar-check{
     margin: -30px 10px 10px 30px;
 }
+

@@ -11,8 +11,8 @@ export class TramitesService {
 
   constructor(private http: HttpClient) { }
 
-  getTramites():Observable<iTramite>{
-    return this.http.get<iTramite>(environment.urlApi+'tramite/listar')
+  getTramites(){
+    return this.http.get(environment.urlApi+'tramite/listar')
   }
 
   getTramitesHaciendo(id_ciudadano:number):Observable<iTramitesHaciendo>{

@@ -11,6 +11,7 @@ import { MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
 import {MatCommonModule} from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 @NgModule({
   declarations: [
     NavBarCiudadanoComponent,
@@ -24,7 +25,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDatepickerModule,
     MatCardModule,
     MatNativeDateModule,
-    MatCommonModule
+    MatCommonModule,
+    PaginationModule
     
 
   ],

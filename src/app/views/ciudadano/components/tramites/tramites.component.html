@@ -8,10 +8,10 @@
 
 <br>
 <h4 style="margin-bottom: 10px;">Trámites disponibles:</h4>
-<div class="row">
-    <div class="col-md-7">
-        <div *ngFor="let t of tramites" class="card shadow">
-            <div class="card-body">
+<div *ngIf="!loading" class="row">
+    <div  class="col-md-7 content-wrapper">
+        <div *ngFor="let t of returnedTramites " class="card shadow">
+            <div class="card-body content-item">
                 <h4 class="card-title">{{t.nombre}}</h4>
                 <h6 class="card-title">Descripción</h6>
               <p class="card-text d-flex align-items-center">
@@ -27,6 +27,14 @@
             
         </div> 
 
+        <pagination
+        [itemsPerPage]="3"
+        [totalItems]="tramites.length"
+        (pageChanged)="pageChanged2($event)"
+         [previousText]="'Anterior'" 
+         [nextText]="'Siguiente'">
+        </pagination>
+
     </div>
 
     
@@ -37,8 +45,9 @@
 
     <div class="col-md-3">
 
-                
-                <app-calendario class="shadow-lg"></app-calendario>
+               <div class="calendario">
+                    <app-calendario class="shadow-lg"></app-calendario>
+               </div> 
             
 
     </div>

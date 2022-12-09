@@ -3,6 +3,7 @@ import { DateAdapter } from '@angular/material/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { iTramite } from 'src/app/interfaces/iTramite';
 import { TramitesService } from '../../services/tramites.service';
+import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 @Component({
   selector: 'app-tramites',
   templateUrl: './tramites.component.html',
@@ -13,6 +14,7 @@ export class TramitesComponent implements OnInit {
   tramites:iTramite[];
   tramiteModal:iTramite;
   loading:boolean=true;
+  returnedTramites?: iTramite[];
 
   constructor(
     private tramiteService:TramitesService,
@@ -26,12 +28,21 @@ export class TramitesComponent implements OnInit {
       if(data){
         this.tramites=data;
         console.log("se listo todoo")
+        this.returnedTramites = this.tramites.slice(0, 3);
         this.loading=false;
       }else{
         console.log("no se listo nada")
       }
      
     });
+    
+  }
+
+
+  pageChanged2(event: PageChangedEvent): void {
+    const startItem = (event.page - 1) * event.itemsPerPage;
+    const endItem = event.page * event.itemsPerPage;
+    this.returnedTramites = this.tramites.slice(startItem, endItem);
   }
 
   onModalInfo(tramiteModal:iTramite, modalTemplate: TemplateRef<any>): void {
