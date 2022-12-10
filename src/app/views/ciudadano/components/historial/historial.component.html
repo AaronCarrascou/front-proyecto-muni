@@ -1,0 +1,46 @@
+
+<div *ngIf="!loading" class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-6">
+        <h4 style="margin-bottom: 15px;">Historial de Trámites:</h4>
+
+        <div *ngFor="let h of historial" class="card shadow">
+            <div class="card-body">
+                <h5 class="card-title">{{h.nombre}} </h5>
+                <h6 class="card-title">Fecha del Trámite: {{h.fecha_etapa_actual}}</h6>
+                <h6 *ngIf="h.estado==1" class="card-title">Resultado:<span style="color: #28A745;">Finalizado correctamente</span> </h6>
+                <h6 *ngIf="h.estado==2" class="card-title">Resultado:<span style="color: #DF4554;">Trámite abandonado</span> </h6>
+            
+            </div>
+            
+        </div>
+          
+    </div>
+
+    
+
+    <div class="col-md-1">
+
+    </div>
+
+    <div class="col-md-3">
+
+        <br><br>  
+        <div class="calendario">
+            <app-calendario class="shadow-lg"></app-calendario>
+
+        </div>         
+    
+
+    </div>
+</div>
+
+<div *ngIf="noHistorial" class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 d-flex justify-content-center">
+        <div style="margin-top: 3em;">
+            <h3>Usted no posee un historial de Trámites aún.</h3>        
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>

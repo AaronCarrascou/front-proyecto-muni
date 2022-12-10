@@ -12,11 +12,13 @@ import {MatCardModule} from '@angular/material/card';
 import {MatCommonModule} from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { HistorialComponent } from './components/historial/historial.component';
 @NgModule({
   declarations: [
     NavBarCiudadanoComponent,
     TramitesComponent,
-    MisTramitesComponent
+    MisTramitesComponent,
+    HistorialComponent
   ],
   imports: [
     CommonModule,

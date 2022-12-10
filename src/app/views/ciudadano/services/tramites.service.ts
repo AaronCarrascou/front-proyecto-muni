@@ -4,6 +4,7 @@ import { iTramite } from 'src/app/interfaces/iTramite';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { iTramitesHaciendo } from 'src/app/interfaces/iTramitesHaciendo';
+import { iHistorial } from 'src/app/interfaces/iHistorial';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,5 +18,9 @@ export class TramitesService {
 
   getTramitesHaciendo(id_ciudadano:number):Observable<iTramitesHaciendo>{
     return this.http.get<iTramitesHaciendo>(environment.urlApi+'ciudadano-tramite/haciendo/'+id_ciudadano);
+  }
+
+  getHistorial(id_ciudadano:number):Observable<iHistorial>{
+    return this.http.get<iHistorial>(environment.urlApi+'ciudadano/historial/'+id_ciudadano);
   }
 }
