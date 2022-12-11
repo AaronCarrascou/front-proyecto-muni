@@ -56,3 +56,10 @@
     min-width: 100px !important;
 
 }
+
+.btn-add-etapa{
+    margin-left: 10px;
+    font-size: 16px;
+    color: white;
+    min-width: 150px !important;  
+}

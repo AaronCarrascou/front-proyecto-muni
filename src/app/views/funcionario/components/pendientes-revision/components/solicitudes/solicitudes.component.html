@@ -11,9 +11,9 @@
     <div *ngFor="let s of solicitudes"  class="card shadow">
         <div class="card-body">
             <h5 style="margin-top: -10px;" class="card-title">Solicitud: {{s.id_ciudadano_tramite}}</h5>
-            <h6 class="card-title">Información</h6>
             <div class="row">
                 <div class="col-7">
+                    <p style="margin-top: -5px; margin-bottom: 5px">Fecha: <strong>{{s.fecha_etapa_actual}}</strong> </p>
                     <p style="margin-top: -5px;">Ciudadano: <strong>{{s.ciudadano.nombre}} {{s.ciudadano.apellidos}}</strong> </p>
                     <p style="margin-top: -15px; margin-bottom: -10px;">Etapa actual: <strong>{{s.etapa_actual}}</strong></p>
                 </div>

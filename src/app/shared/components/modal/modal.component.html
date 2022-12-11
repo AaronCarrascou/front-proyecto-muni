@@ -116,7 +116,7 @@
           <i class="far fa-check-circle"></i>        
         </button>
 
-        <!--Boton confirmar etapa-->
+        <!--Boton finalizar tramite-->
         <button
         *ngIf="actionFinalizarTramite"
         type="button"
@@ -160,6 +160,16 @@
                
         </button>
 
+<!-- ---------------Botones editar tramite----------------------- -->
+
+        <button
+        *ngIf="actionAddEtapa"
+        type="button"
+        class="btn btn-primary btn-add-etapa"
+        >
+        {{actionAddEtapa}} 
+        <i class="fas fa-plus"></i>
+        </button>
 
 
       </div>

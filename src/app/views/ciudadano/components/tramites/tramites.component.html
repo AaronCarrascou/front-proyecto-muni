@@ -1,15 +1,18 @@
-<div class="search d-flex align-items-center">
-    <input type="text" class="form-control" placeholder="Buscar trámite por nombre" >
-    <button class="btn btn-primary buscar-btn">
-        <i class="fas fa-search fa-lg"></i> 
-    </button>
-   
-</div>
-
-<br>
-<h4 style="margin-bottom: 10px;">Trámites disponibles:</h4>
 <div *ngIf="!loading" class="row">
-    <div  class="col-md-7 content-wrapper">
+    <div class="col-lg-1 col-md-1"></div>
+    <div  class="col-md-10 col-lg-6">
+        <div class="search d-flex align-items-center">
+            <input type="text" class="form-control" placeholder="Buscar trámite por nombre" >
+            <button class="btn btn-primary buscar-btn">
+                <i class="fas fa-search fa-lg"></i> 
+            </button>
+           
+        </div>
+        
+
+        <h4 style="margin-bottom: 10px; margin-top: 20px;">Trámites disponibles:</h4>
+        
+
         <div *ngFor="let t of returnedTramites " class="card shadow">
             <div class="card-body content-item">
                 <h4 class="card-title">{{t.nombre}}</h4>
@@ -39,13 +42,13 @@
 
     
 
-    <div class="col-md-1">
+    <div class="col-lg-1 col-md-1">
 
     </div>
 
-    <div class="col-md-3">
+    <div class="col-lg-3">
 
-               <div class="calendario">
+               <div class="calendario" style="margin-top: 6em;">
                     <app-calendario class="shadow-lg"></app-calendario>
                </div> 
             

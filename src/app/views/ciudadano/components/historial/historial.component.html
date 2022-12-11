@@ -1,7 +1,7 @@
 
 <div *ngIf="!loading" class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-6">
+    <div class="col-md-1 col-lg-1"></div>
+    <div class="col-md-10 col-lg-6">
         <h4 style="margin-bottom: 15px;">Historial de Trámites:</h4>
 
         <div *ngFor="let h of historial" class="card shadow">
@@ -14,19 +14,24 @@
             </div>
             
         </div>
+        <pagination *ngIf="historial.length!=0"
+        [itemsPerPage]="3"
+
+         [previousText]="'Anterior'" 
+         [nextText]="'Siguiente'">
+        </pagination>
           
     </div>
 
     
 
-    <div class="col-md-1">
+    <div class="col-md-1 col-lg-1">
 
     </div>
 
-    <div class="col-md-3">
+    <div class="col-lg-3">
 
-        <br><br>  
-        <div class="calendario">
+        <div class="calendario" style="margin-top: 3em;">
             <app-calendario class="shadow-lg"></app-calendario>
 
         </div>         

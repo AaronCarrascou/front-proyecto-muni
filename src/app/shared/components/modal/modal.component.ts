@@ -20,6 +20,7 @@ export class ModalComponent{
   @Input() actionDefault: string='';
   @Input() actionSend : string='';
   @Input() actionFinalizarTramite : string='';
+  @Input() actionAddEtapa : string='';
   @Input() nivel: number=0; // para poder levantar modal sobre modal se debe ir sumando un nivel.
   @Input() activeLoading: boolean=false;
   @Input() customClass: string='';
