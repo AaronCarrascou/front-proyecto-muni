@@ -21,10 +21,9 @@
 }
 .card{
     border: 2px solid rgb(99, 99, 99);
+    padding: 0px 40px 20px 40px;
 
 }
-
-input{
-    margin-top: -5px;
-    margin-bottom: 0px !important;
+h6{
+    margin-bottom: 2px !important;
 }

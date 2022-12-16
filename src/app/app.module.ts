@@ -14,9 +14,12 @@ import { FuncionarioModule } from './views/funcionario/funcionario.module';
 import {MatCommonModule} from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { LoginModule } from './views/login/login.module';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -24,6 +27,7 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     FuncionarioModule,
     AdminModule,
     CiudadanoModule,
+    LoginModule,
     SharedModule,
     BrowserAnimationsModule,
     HttpClientModule,
