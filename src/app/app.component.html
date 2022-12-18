@@ -4,12 +4,12 @@
 
   <app-nav-bar-admin *ngIf="rol=='ADMIN'"></app-nav-bar-admin>
   
-  <app-nav-bar-ciudadano *ngIf="rol==''"></app-nav-bar-ciudadano>
+  <app-nav-bar-ciudadano *ngIf="rol=='CIUDADANO'"></app-nav-bar-ciudadano>
   
   
   <body>
 
-    <div class="opciones" *ngIf="rol!=''">
+    <div class="opciones" *ngIf="rol==''">
 
       <div class="row">
         <div class="col"></div>
@@ -32,7 +32,7 @@
         <div class="col"></div>
       </div>
     </div>
-    <router-outlet  class="router"></router-outlet>
+    <router-outlet *ngIf="rol!=''"  class="router"></router-outlet>
   </body>
 </div>
 
