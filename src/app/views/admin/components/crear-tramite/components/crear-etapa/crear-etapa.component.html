@@ -9,47 +9,52 @@
                 
                 <div class="col-lg-6 col-md-6">
                     <h5 class="label">Nombre Etapa:</h5>
-                    <input class="form-control" formControlName="nombreEtapa" type="text"
+                    <input (ngModelChange)="enviarFormulario()" class="form-control" formControlName="nombreEtapa" type="text"
                     placeholder="Ingresa el nombre de la Etapa">
 
                     <h5 class="label">Encargado:</h5>
-                    <select class="form-control" id="encargado">
+                    <select (ngModelChange)="enviarFormulario()" class="form-control" formControlName="encargado">
                         <option style="color: #6C757D !important;" hidden selected>Selecciona encargado</option>
                         <option value="1">Aaron</option>
                         <option value="2">Matias</option>
                     </select>
 
-                    <h5 class="label">Tiempo estimado:</h5>
-                    <input class="form-control" formControlName="tiempoEstimado" type="number"
+                    <h5  class="label">Tiempo estimado:</h5>
+                    <input (ngModelChange)="enviarFormulario()" class="form-control" formControlName="tiempoEstimado" type="number"
                     placeholder="Tiempo en días hábiles">
                 </div>
-                <div class="col-lg-6 col-md-6">
-                    <h5 class="label">Documentos de Etapa:</h5>
-                    <div class="d-flex">
-                        <input class="form-control " formControlName="documentoEtapa" type="text"
-                        placeholder="Ingresa el nombre del documento">
 
-                        <button (click)="onAgregarDoc()" class="btn btn-primary btn-agregar-doc"><i class="fas fa-plus"></i></button>
+                <!-- DOCUMENTOSSS -->
+                    <div class="col-lg-6 col-md-6">
+                        <form [formGroup]="docsForm">
+                            <h5 class="label">Documentos de Etapa:</h5>
+                            <div class="d-flex">
+                                <input class="form-control " formControlName="documentoEtapa" type="text"
+                                placeholder="Ingresa el nombre del documento">
+        
+                                <button (click)="onAgregarDoc()" class="btn btn-primary btn-agregar-doc"><i class="fas fa-plus"></i></button>
+                            </div>
+    
+                        </form>
+    
+                        <div class="card lista-documentos">
+                            <p class="placeholders" *ngIf="documentos.length==0">
+                                Acá se agregarán los documentos
+                            </p>
+                            <ul>
+                                <li *ngFor="let d of documentos">{{d}} <i (click)="onEliminarDoc(d)" class="fas fa-trash danger"></i></li>
+                            </ul>
+                        </div>
                     </div>
+               
 
-                    
-
-                    <div class="card lista-documentos">
-                        <p class="placeholders" *ngIf="documentos.length==0">
-                            Acá se agregarán los documentos
-                        </p>
-                        <ul>
-                            <li *ngFor="let d of documentos">{{d}} <i (click)="onEliminarDoc(d)" class="fas fa-trash danger"></i></li>
-                        </ul>
-                    </div>
-                </div>
                 
             </div>
 
             <div class="row">
                 <div class="col-lg-12 col-md-12">
                     <h5 >Descripción Etapa:</h5>
-                    <textarea class="form-control" formControlName="descripcionEtapa" cols="30" rows="4"
+                    <textarea (ngModelChange)="enviarFormulario()" class="form-control" formControlName="descripcionEtapa" cols="30" rows="4"
                     placeholder="Ingresa una descripción de la Etapa"></textarea>
                 </div>
             </div>

@@ -3,15 +3,17 @@
 <div class="row ">
     <div class="col"></div>
     <div class="col-lg-6 col-md-8 card shadow">
-        <div class="formControl">
+        <form [formGroup]="crearTramiteForm">
             <h5 class="label">Nombre del trámite:</h5>
-            <input class="form-control" id="nombreTramite" type="text"
+
+            <input (ngModelChange)="enviarFormulario()" class="form-control" formControlName="nombreTramite" type="text"
             placeholder="Ingresa el nombre del trámite">
 
             <h5 class="label">Descripción:</h5>
-            <textarea class="form-control" id="descripcionTramite" cols="30" rows="4"
+
+            <textarea (ngModelChange)="enviarFormulario()" class="form-control" formControlName="descripcionTramite" cols="30" rows="4"
             placeholder="Ingresa una descripción general del trámite"></textarea>
-        </div>
+        </form>
 
     </div>
     <div class="col"></div>
