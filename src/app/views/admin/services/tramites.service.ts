@@ -3,6 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { iTramite } from 'src/app/interfaces/iTramite';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
+import { iCrearTramite } from 'src/app/interfaces/post/iCrearTramite';
+import { iCrearEtapa } from 'src/app/interfaces/post/iCrearEtapa';
+import { iCrearDocumento } from 'src/app/interfaces/post/iCrearDocumento';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +15,18 @@ export class TramitesService {
 
   getTramites():Observable<iTramite>{
     return this.http.get<iTramite>(environment.urlApi+'tramite/listar')
+  }
+
+  postCrearTramite(crearTramitePost: iCrearTramite){
+    return this.http.post(environment.urlApi+'tramite/crear', crearTramitePost)
+  }
+
+  postCrearEtapa(crearEtapaPost: iCrearEtapa){
+    return this.http.post(environment.urlApi+'etapa/crear', crearEtapaPost)
+  }
+
+  postCrearDocumentos(crearDocumentoPost: iCrearDocumento){
+    return this.http.post(environment.urlApi+'documento/crear', crearDocumentoPost)
   }
 
 }

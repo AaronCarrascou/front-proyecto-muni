@@ -13,8 +13,8 @@
                     placeholder="Ingresa el nombre de la Etapa">
 
                     <h5 class="label">Encargado:</h5>
-                    <select (ngModelChange)="enviarFormulario()" class="form-control" formControlName="encargado">
-                        <option style="color: #6C757D !important;" hidden selected>Selecciona encargado</option>
+                    <select (ngModelChange)="enviarFormulario()" class="form-select" formControlName="encargado">
+                        <option style="color: #6C757D !important;" value="0" selected>Selecciona encargado</option>
                         <option value="1">Aaron</option>
                         <option value="2">Matias</option>
                     </select>

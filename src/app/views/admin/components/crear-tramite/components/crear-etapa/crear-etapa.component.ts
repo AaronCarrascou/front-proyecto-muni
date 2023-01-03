@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -9,9 +9,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CrearEtapaComponent implements OnInit {
 
   doc:String;
-  documentos: String[]=[];
-  crearEtapaForm: FormGroup = new FormGroup({});
-  docsForm: FormGroup = new FormGroup({});
+  @Input() documentos: string[];
+  @Input() crearEtapaForm: FormGroup;
+  @Input() docsForm: FormGroup;
 
   @Output() formValidEvent: EventEmitter<any> = new EventEmitter(); 
   @Output() crearEtapaFormEvent: EventEmitter<any> = new EventEmitter(); 
@@ -24,22 +24,14 @@ export class CrearEtapaComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.crearEtapaForm = this.builder.group({
-      nombreEtapa:['', [Validators.required, Validators.minLength(10)]],
-      encargado:['', Validators.required],
-      tiempoEstimado: ['', [Validators.required, Validators.min(1)]],
-      descripcionEtapa:['', [Validators.required, Validators.minLength(10)]]
-
-    });
-
-    this.docsForm = this.builder.group({
-      documentoEtapa:[''],
-    })
   }
 
   enviarFormulario(){
-    this.formValidEvent.emit(this.crearEtapaForm.valid);
-    this.crearEtapaFormEvent.emit(this.crearEtapaForm);
+    if(this.crearEtapaForm.value.encargado!=0){
+      this.formValidEvent.emit(this.crearEtapaForm.valid);
+      this.crearEtapaFormEvent.emit(this.crearEtapaForm);
+    }
+
   }
 
   onAgregarDoc(){
@@ -52,7 +44,7 @@ export class CrearEtapaComponent implements OnInit {
 
   }
 
-  onEliminarDoc(doc: String){
+  onEliminarDoc(doc: string){
     this.documentos.splice(this.documentos.indexOf(doc), 1) ;
     this.docsEvent.emit(this.documentos);
   }
