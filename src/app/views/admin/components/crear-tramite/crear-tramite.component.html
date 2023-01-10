@@ -30,7 +30,7 @@
 
         <button [disabled]="!etapaFormValida" (click)="onAgregarEtapa()" *ngIf="paso==2" class="btn btn-primary btn-derecha"> Agregar etapa <i class="fas fa-plus"></i> </button>
 
-        <button [disabled]="crearTramite" *ngIf="paso==2" class="btn btn-success btn-derecha"> Finalizar creación <i class="fas fa-save"></i> </button>
+        <button [disabled]="crearTramite" (click)="onFinalizarCreacion()" *ngIf="paso==2" class="btn btn-success btn-derecha"> Finalizar creación <i class="fas fa-save"></i> </button>
 
         
 

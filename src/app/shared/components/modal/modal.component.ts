@@ -16,6 +16,7 @@ export class ModalComponent{
   @Input() actionAvisarCiudadano: string='';
   @Input() actionCancelarTramite: string='';
   @Input() actionConfirm: string='';
+  @Input() actionConfirm2: string='';
   @Input() actionDeny: string='';
   @Input() actionDefault: string='';
   @Input() actionSend : string='';

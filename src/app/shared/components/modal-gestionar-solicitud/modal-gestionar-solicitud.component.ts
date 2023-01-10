@@ -1,10 +1,12 @@
-import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter, TemplateRef } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
 import { iCiudadano } from 'src/app/interfaces/iCiudadano';
 import { iDocumento } from 'src/app/interfaces/iDocumento';
 import { iEtapa } from 'src/app/interfaces/iEtapa';
 import { iSolicitud, iTramiteParticipando } from 'src/app/interfaces/iPendientesDeRevision';
 import { iAceptarEtapa } from 'src/app/interfaces/post/iAceptarEtapa';
+import { iPostAbandonar } from 'src/app/interfaces/post/iPostAbandonar';
 import { InfoTramiteService } from '../../services/info-tramite.service';
 import { TramiteHaciendoService } from '../../services/tramite-haciendo.service';
 
@@ -31,11 +33,15 @@ export class ModalGestionarSolicitudComponent implements OnInit {
     comentario:""
   };
   comentario:string='';
+  postAbandonar:iPostAbandonar={
+    comentario:''
+  };
 
   constructor(
     private toastr: ToastrService,
     private infoTramiteService: InfoTramiteService,
-    private tramiteHaciendoService:TramiteHaciendoService
+    private tramiteHaciendoService:TramiteHaciendoService,
+    private bsModalService: BsModalService
   ) { }
 
   ngOnInit(): void {
@@ -111,7 +117,9 @@ export class ModalGestionarSolicitudComponent implements OnInit {
   }
 
   onCancelarTramite(){
-    this.tramiteHaciendoService.putAbandonarTramite(this.solicitud.id_ciudadano_tramite).subscribe((res:any)=>{
+    console.log('cancelando tramite')
+    this.postAbandonar.comentario=this.comentario;
+    this.tramiteHaciendoService.putAbandonarTramiteFunc(this.solicitud.id_ciudadano_tramite, this.postAbandonar).subscribe((res:any)=>{
       if(res.status==200){
         this.closeModalEvent.emit();
         this.toastr.warning('Trámite cancelado' );
@@ -120,6 +128,39 @@ export class ModalGestionarSolicitudComponent implements OnInit {
         this.toastr.error('Error al cancelar el Trámite' );
       }
     });
+  }
+  onModalConfirmarCancelar(modalTemplate: TemplateRef<any>): void {
+   
+    this.bsModalService.show(modalTemplate, {
+      id: 2, // para poder levantar modal sobre modal se debe ir sumando un nivel.
+      backdrop:false,
+      class: 'modal-md',
+    });
+  }
+
+  onRechazarEtapa(){
+    if(this.comentario==''){
+      this.toastr.warning('Debe escribir un motivo');
+    }else{
+      this.postAbandonar.comentario=this.comentario;
+      this.tramiteHaciendoService.postRechazarEtapa(this.solicitud.id_ciudadano_tramite, this.postAbandonar).subscribe((res:any)=>{
+        if(res.status==200){
+          this.closeModalEvent.emit();
+          this.toastr.warning('Ciudadano notificado', 'Etapa rechazada' );
+        }else{
+          this.closeModalEvent.emit();
+          this.toastr.error('Error al rechazar etapa' );
+        }
+      });
+    }
+  }
+
+  onAvisarCiudadano(){
+    if(this.comentario==''){
+      this.toastr.warning('Debe escribir un comentario al ciudadano')
+    }else{
+      //por implementar
+    }
   }
 
   

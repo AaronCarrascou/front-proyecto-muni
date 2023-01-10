@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { iCrearDocumento } from 'src/app/interfaces/post/iCrearDocumento';
 import { iCrearEtapa } from 'src/app/interfaces/post/iCrearEtapa';
@@ -45,7 +46,8 @@ export class CrearTramiteComponent implements OnInit {
   constructor(
     private builder: FormBuilder,
     private tramitesService: TramitesService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) { 
     this.crearEtapaForm = this.builder.group({
       nombreEtapa:['', [Validators.required, Validators.minLength(10)]],
@@ -74,7 +76,7 @@ export class CrearTramiteComponent implements OnInit {
     if(this.crearTramite==true){
       this.crearTramitePost.nombre=this.crearTramiteForm.value.nombreTramite;
       this.crearTramitePost.descripcion=this.crearTramiteForm.value.descripcionTramite;
-
+      //CREAR TRAMITE INICIAL
       this.tramitesService.postCrearTramite(this.crearTramitePost).subscribe((res:any)=>{
         this.idTramiteCreado=res.id_tramite;
        
@@ -91,7 +93,7 @@ export class CrearTramiteComponent implements OnInit {
         //LAMADA A SERVICIO crear crearEtapa
         this.tramitesService.postCrearEtapa(this.crearEtapaPost).subscribe((res2:any)=>{
 
-          this.idEtapaCreada=res2.id_etapa;
+          this.idEtapaCreada=res2.data.id_etapa;
 
           for(let i=0; i<this.documentos.length; i++){
             this.crearDocumentoPost.nombre = this.documentos[i];
@@ -101,6 +103,7 @@ export class CrearTramiteComponent implements OnInit {
 
             });
           }
+          this.toastr.success('Trámite y Etapa agregados con exito!');
           this.limpiarForms();
 
         })        
@@ -120,7 +123,8 @@ export class CrearTramiteComponent implements OnInit {
         
         //LAMADA A SERVICIO crear crearEtapa
         this.tramitesService.postCrearEtapa(this.crearEtapaPost).subscribe((res:any)=>{
-          this.idEtapaCreada=res.id_etapa;
+          
+          this.idEtapaCreada=res.data.id_etapa;
 
           for(let i=0; i<this.documentos.length; i++){
             this.crearDocumentoPost.nombre = this.documentos[i];
@@ -130,6 +134,7 @@ export class CrearTramiteComponent implements OnInit {
 
             });
           }
+          this.toastr.success('Etapa agregada con exito!');
           this.limpiarForms();
 
         })   
@@ -137,6 +142,10 @@ export class CrearTramiteComponent implements OnInit {
     }
     
 
+  }
+
+  onFinalizarCreacion(){
+    this.router.navigate(['/gestionar-tramites'])
   }
 
   setearcrearEtapaForm(event:any){

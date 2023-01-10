@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { iCrearTramiteHaciendo } from 'src/app/interfaces/post/iCrearTramiteHaciendo';
 import { iAceptarEtapa } from 'src/app/interfaces/post/iAceptarEtapa';
+import { iPostAbandonar } from 'src/app/interfaces/post/iPostAbandonar';
 
 @Injectable({
     providedIn: 'root'
@@ -32,6 +33,25 @@ import { iAceptarEtapa } from 'src/app/interfaces/post/iAceptarEtapa';
       data.append('idTramiteCiudadano', idTramiteHaciendo.toString());
 
       return this.http.put(environment.urlApi+'ciudadano-tramite/abandonar/'+idTramiteHaciendo, data );
+    }
+
+    //FUNCIONARIO:
+  
+    putAbandonarTramiteFunc(idTramiteHaciendo:number, comentario:iPostAbandonar){
+
+      return this.http.put(environment.urlApi+'ciudadano-tramite/abandonarFuncionario/'+idTramiteHaciendo, comentario );
+    }
+    
+    postRechazarEtapa(idTramiteHaciendo:number, comentario:iPostAbandonar){
+
+      return this.http.post(environment.urlApi+'ciudadano-tramite/rechazada/'+idTramiteHaciendo, comentario );
+    }
+
+    //PENDIENTE
+    postAvisarCiudadano(idTramiteHaciendo:number, comentario:iPostAbandonar){
+
+      return this.http.put(environment.urlApi+'ciudadano-tramite/abandonarFuncionario/'+idTramiteHaciendo, comentario );
+
     }
 
   }

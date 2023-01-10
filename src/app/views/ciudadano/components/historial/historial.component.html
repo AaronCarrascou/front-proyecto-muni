@@ -4,7 +4,7 @@
     <div class="col-md-10 col-lg-6">
         <h4 style="margin-bottom: 15px;">Historial de Trámites:</h4>
 
-        <div *ngFor="let h of historial" class="card shadow">
+        <div *ngFor="let h of returnedHistorial" class="card shadow">
             <div class="card-body">
                 <h5 class="card-title">{{h.nombre}} </h5>
                 <h6 class="card-title">Fecha del Trámite: {{h.fecha_etapa_actual}}</h6>
@@ -15,8 +15,9 @@
             
         </div>
         <pagination *ngIf="historial.length!=0"
-        [itemsPerPage]="3"
-
+        [itemsPerPage]="5"
+        [totalItems]="historial.length"
+        (pageChanged)="pageChanged2($event)"
          [previousText]="'Anterior'" 
          [nextText]="'Siguiente'">
         </pagination>

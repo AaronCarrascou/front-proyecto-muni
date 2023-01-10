@@ -23,4 +23,7 @@ export class TramitesService {
   getHistorial(id_ciudadano:number):Observable<iHistorial>{
     return this.http.get<iHistorial>(environment.urlApi+'ciudadano/historial/'+id_ciudadano);
   }
+  getNombreTramiteById(idTramite:number){
+    return this.http.get(environment.urlApi+'tramite/nombreTramite/'+idTramite);
+  }
 }
