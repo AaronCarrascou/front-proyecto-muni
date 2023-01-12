@@ -159,7 +159,16 @@ export class ModalGestionarSolicitudComponent implements OnInit {
     if(this.comentario==''){
       this.toastr.warning('Debe escribir un comentario al ciudadano')
     }else{
-      //por implementar
+      this.postAbandonar.comentario=this.comentario;
+      this.tramiteHaciendoService.postAvisarCiudadano(this.solicitud.id_ciudadano_tramite, this.postAbandonar).subscribe((res:any)=>{
+        if(res.status==200){
+          this.closeModalEvent.emit();
+          this.toastr.success('Aviso enviado a Ciudadano' );
+        }else{
+          this.closeModalEvent.emit();
+          this.toastr.error('Error al enviar aviso' );
+        }
+      });
     }
   }
 

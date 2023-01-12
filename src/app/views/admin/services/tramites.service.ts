@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment.prod';
 import { iCrearTramite } from 'src/app/interfaces/post/iCrearTramite';
 import { iCrearEtapa } from 'src/app/interfaces/post/iCrearEtapa';
 import { iCrearDocumento } from 'src/app/interfaces/post/iCrearDocumento';
+import { iEstadisticasTramites } from 'src/app/interfaces/iEstadisticasTramites';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +16,9 @@ export class TramitesService {
 
   getTramites():Observable<iTramite>{
     return this.http.get<iTramite>(environment.urlApi+'tramite/listar')
+  }
+  getEstadisticasPorTramite():Observable<iEstadisticasTramites>{
+    return this.http.get<iEstadisticasTramites>(environment.urlApi+'ciudadano-tramite/estadisticas/tramites');
   }
 
   postCrearTramite(crearTramitePost: iCrearTramite){
@@ -27,6 +31,10 @@ export class TramitesService {
 
   postCrearDocumentos(crearDocumentoPost: iCrearDocumento){
     return this.http.post(environment.urlApi+'documento/crear', crearDocumentoPost)
+  }
+
+  deleteTramite(idTramite:number){
+    return this.http.delete(environment.urlApi+'tramite/eliminar/'+idTramite);
   }
 
 }

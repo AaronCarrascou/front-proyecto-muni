@@ -13,12 +13,14 @@ import {MatCommonModule} from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { HistorialComponent } from './components/historial/historial.component';
+import { InfoPersonalComponent } from './components/info-personal/info-personal.component';
 @NgModule({
   declarations: [
     NavBarCiudadanoComponent,
     TramitesComponent,
     MisTramitesComponent,
-    HistorialComponent
+    HistorialComponent,
+    InfoPersonalComponent
   ],
   imports: [
     CommonModule,

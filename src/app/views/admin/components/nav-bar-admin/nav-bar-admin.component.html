@@ -8,16 +8,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                 <li class="nav-item links">
-                  <a class={{active1}} (click)="onActive1()" routerLink="/gestionar-tramites">Gestionar trámites</a>
+                  <a [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}" routerLink="/gestionar-tramites" class="nav-link">Gestionar trámites</a>
                 </li>
                 <li class="nav-item links">
-                  <a class={{active2}} (click)="onActive2()" routerLink="/crear-tramite">Crear trámite</a>
+                  <a [routerLinkActive]="'active'" class="nav-link" routerLink="/crear-tramite">Crear trámite</a>
                 </li>
                 <li class="nav-item links">
-                  <a class={{active3}} (click)="onActive3()" routerLink="/registrar-funcionario">Registrar funcionario</a>
+                  <a [routerLinkActive]="'active'" class="nav-link"  routerLink="/registrar-funcionario">Registrar funcionario</a>
                 </li>
                 <li class="nav-item links">
-                  <a class={{active1}} (click)="onActive3()" routerLink="/estadisticas">Estadísticas</a>
+                  <a [routerLinkActive]="'active'" class="nav-link" routerLink="/estadisticas">Estadísticas</a>
                 </li>
     
               </ul>

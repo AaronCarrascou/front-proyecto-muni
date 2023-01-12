@@ -1,0 +1,32 @@
+.titulo{
+
+    font-size: 18px;
+    text-shadow: 1px 1px #cacaca ;
+    margin-top: -30px;
+
+}
+
+.numero{
+    font-size: 50px;
+    margin-top: -20px;
+}
+
+.green{
+    color: #28A745;
+    
+}
+
+.blue{
+    color: #007BFF;
+    
+}
+
+.red{
+    color: #DC3545;
+    
+}
+
+.ceramicos{
+    margin-right: 50px;
+    margin-left: 50px;
+}

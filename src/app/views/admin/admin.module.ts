@@ -9,6 +9,8 @@ import { CrearEtapaComponent } from './components/crear-tramite/components/crear
 import { CrearDescTramiteComponent } from './components/crear-tramite/components/crear-desc-tramite/crear-desc-tramite.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 
 
@@ -19,14 +21,16 @@ import { SharedModule } from 'src/app/shared/shared.module';
     RegistrarFuncionarioComponent,
     NavBarAdminComponent,
     CrearEtapaComponent,
-    CrearDescTramiteComponent
+    CrearDescTramiteComponent,
+    EstadisticasComponent
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
     FormsModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PaginationModule
   ],
   exports:[
     GestionarTramitesComponent,

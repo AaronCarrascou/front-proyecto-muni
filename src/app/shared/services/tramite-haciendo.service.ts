@@ -29,10 +29,9 @@ import { iPostAbandonar } from 'src/app/interfaces/post/iPostAbandonar';
     }
   
     putAbandonarTramite(idTramiteHaciendo:number){
-      const data= new FormData();
-      data.append('idTramiteCiudadano', idTramiteHaciendo.toString());
 
-      return this.http.put(environment.urlApi+'ciudadano-tramite/abandonar/'+idTramiteHaciendo, data );
+
+      return this.http.put(environment.urlApi+'ciudadano-tramite/abandonarCiudadano/'+idTramiteHaciendo, null );
     }
 
     //FUNCIONARIO:
@@ -47,10 +46,9 @@ import { iPostAbandonar } from 'src/app/interfaces/post/iPostAbandonar';
       return this.http.post(environment.urlApi+'ciudadano-tramite/rechazada/'+idTramiteHaciendo, comentario );
     }
 
-    //PENDIENTE
     postAvisarCiudadano(idTramiteHaciendo:number, comentario:iPostAbandonar){
 
-      return this.http.put(environment.urlApi+'ciudadano-tramite/abandonarFuncionario/'+idTramiteHaciendo, comentario );
+      return this.http.post(environment.urlApi+'ciudadano-tramite/aviso/'+idTramiteHaciendo, comentario );
 
     }
 
