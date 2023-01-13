@@ -51,7 +51,7 @@ export class CrearTramiteComponent implements OnInit {
   ) { 
     this.crearEtapaForm = this.builder.group({
       nombreEtapa:['', [Validators.required, Validators.minLength(10)]],
-      encargado:[0, Validators.required],
+      encargado:[0, [Validators.required, Validators.min(1)]],
       tiempoEstimado: ['', [Validators.required, Validators.min(1)]],
       descripcionEtapa:['', [Validators.required, Validators.minLength(10)]]
 
