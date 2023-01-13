@@ -6,29 +6,31 @@
         <span style="font-size: 14px; margin-bottom: -5px;">
             *En los siguientes campos debe ingresar la información correspondiente al Funcionario que desea registrar.
         </span>
-
+    <form [formGroup]="funcionarioForm">
         <div class="formControl">
             <h5 class="label">RUT:</h5>
-            <input class="form-control" id="rut" type="text"
+            <input class="form-control" formControlName="rut" type="text"
             placeholder="Ingrese RUT (11.111.111-1)">
 
             <h5 class="label">Correo:</h5>
-            <input class="form-control" id="correo" type="text"
+            <input class="form-control" formControlName="email" type="text"
             placeholder="Ingrese correo institucional del Funcionario">
 
             <h5 class="label">Nombres:</h5>
-            <input class="form-control" id="nombres" type="text"
+            <input class="form-control" formControlName="nombre" type="text"
             placeholder="Ingrese ambos nombres">
 
             <h5 class="label">Apellidos:</h5>
-            <input class="form-control" id="apellidos" type="text"
+            <input class="form-control" formControlName="apellidos" type="text"
             placeholder="Ingrese ambos apellidos">
 
             <h5 class="label">Teléfono móvil:</h5>
-            <input class="form-control" id="telefono" type="text"
+            <input class="form-control" formControlName="telefono" type="text"
             placeholder="Ingrese el número de teléfono">
 
         </div>
+    </form>
+
 
     </div>
     <div class="col"></div>
@@ -38,7 +40,7 @@
     <div class="col"></div>
     <div class="col-lg-6 col-md-8 d-flex justify-content-center">
 
-        <button style="margin-top: 10px;" class="btn btn-success">Registrar Funcionario <i class="fas fa-user-plus"></i></button>
+        <button (click)="onRegistrarFuncionario()" [disabled]="funcionarioForm.invalid" style="margin-top: 10px;" class="btn btn-success">Registrar Funcionario <i class="fas fa-user-plus"></i></button>
 
     </div>
     <div class="col"></div>

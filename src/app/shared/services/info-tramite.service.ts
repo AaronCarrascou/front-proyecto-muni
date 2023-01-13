@@ -5,6 +5,7 @@ import { iEtapa } from 'src/app/interfaces/iEtapa';
 import { iDocumento } from 'src/app/interfaces/iDocumento';
 import { iFuncionario } from 'src/app/interfaces/iFuncionario';
 import { environment } from 'src/environments/environment.prod';
+import { iEditarEtapaPost } from 'src/app/interfaces/post/iEditarEtapaPost';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +24,14 @@ export class InfoTramiteService {
 
   getFuncionarioById(idFuncionario: number):Observable<iFuncionario>{
     return this.http.get<iFuncionario>(environment.urlApi+'funcionario/'+idFuncionario);
+  }
+
+  //Editar tramite
+  putEditarEtapa(idEtapa:number, etapa:iEditarEtapaPost){
+    return this.http.put(environment.urlApi+'etapa/actualizar/'+idEtapa, etapa);
+  }
+  
+  deleteEtapa(idEtapa:number){
+    return this.http.delete(environment.urlApi+'etapa/eliminar/'+idEtapa);
   }
 }

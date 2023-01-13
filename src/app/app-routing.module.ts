@@ -8,6 +8,7 @@ import { HistorialComponent } from './views/ciudadano/components/historial/histo
 import { InfoPersonalComponent } from './views/ciudadano/components/info-personal/info-personal.component';
 import { MisTramitesComponent } from './views/ciudadano/components/mis-tramites/mis-tramites.component';
 import { TramitesComponent } from './views/ciudadano/components/tramites/tramites.component';
+import { InfoPersonalFuncComponent } from './views/funcionario/components/info-personal-func/info-personal-func.component';
 import { PendientesRevisionComponent } from './views/funcionario/components/pendientes-revision/pendientes-revision.component';
 import { IniciarSesionComponent } from './views/login/components/iniciar-sesion/iniciar-sesion.component';
 import { RegistrarComponent } from './views/login/components/registrar/registrar.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path:'estadisticas', component: EstadisticasComponent},
 
   {path:'pendientes-revision', component: PendientesRevisionComponent},
+  {path:'info-personal-func', component: InfoPersonalFuncComponent},
 
   {path:'login', component: IniciarSesionComponent},
   {path:'registrar', component: RegistrarComponent}

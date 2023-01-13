@@ -5,6 +5,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { PendientesRevisionComponent } from './components/pendientes-revision/pendientes-revision.component';
 import { SolicitudesComponent } from './components/pendientes-revision/components/solicitudes/solicitudes.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { InfoPersonalFuncComponent } from './components/info-personal-func/info-personal-func.component';
 
 
 
@@ -13,7 +14,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   declarations: [
     NavBarFuncionarioComponent,
     PendientesRevisionComponent,
-    SolicitudesComponent
+    SolicitudesComponent,
+    InfoPersonalFuncComponent
   ],
   imports: [
     CommonModule,

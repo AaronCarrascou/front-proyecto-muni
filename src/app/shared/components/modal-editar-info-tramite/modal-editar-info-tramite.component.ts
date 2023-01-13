@@ -1,6 +1,6 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { StepperOrientation } from '@angular/cdk/stepper';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
@@ -15,6 +15,7 @@ import { InfoTramiteService } from '../../services/info-tramite.service';
 })
 export class ModalEditarInfoTramiteComponent implements OnInit {
   @Input() tramite:iTramite;
+  @Output() refreshEvent: EventEmitter<any> = new EventEmitter();
 
   stepperOrientation: Observable<StepperOrientation>;
 

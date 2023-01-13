@@ -102,4 +102,12 @@ export class GestionarTramitesComponent implements OnInit {
      
   }
 
+  onRefresh(){
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+
+    this.router.navigate(['./'], {
+      relativeTo: this.route, queryParamsHandling: "merge"
+    })
+  }
+
 }

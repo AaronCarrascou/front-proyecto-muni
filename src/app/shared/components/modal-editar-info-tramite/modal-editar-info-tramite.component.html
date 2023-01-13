@@ -15,7 +15,9 @@
             <mat-icon>edit</mat-icon>
         </ng-template>
 
-            <app-editar-info-etapa [etapa]="e"
+            <app-editar-info-etapa 
+            (refreshEvent)="refreshEvent.emit()"
+            [etapa]="e"
             ></app-editar-info-etapa>
         
         </mat-step>
