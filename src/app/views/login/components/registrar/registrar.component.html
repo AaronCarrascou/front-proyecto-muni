@@ -11,39 +11,42 @@
 <div class="row ">
     <div class="col"></div>
     <div class="col-lg-4 col-md-6 card shadow ">
-
+    
+    <form [formGroup]="ciudadanoForm">
         <div class="formControl ">
 
             <h6 class="label">Nombres:</h6>
-            <input class="form-control" id="nombres" type="text"
+            <input class="form-control" formControlName="nombre" type="text"
             placeholder="Ingresa tus nombres">
 
             <h6 class="label">Apellidos:</h6>
-            <input class="form-control" id="apellidos" type="text"
+            <input class="form-control" formControlName="apellidos" type="text"
             placeholder="Ingresa tus apellidos">
 
             <h6 class="label">RUT:</h6>
-            <input class="form-control" id="rut" type="text"
+            <input class="form-control" formControlName="rut" type="text"
             placeholder="Ingresa tus apellidos">
 
             <h6 class="label">Correo:</h6>
-            <input class="form-control" id="correo" type="text"
+            <input class="form-control" formControlName="email" type="text"
             placeholder="Ingresa tu correo personal">
 
             <h6 class="label">Teléfono móvil:</h6>
-            <input class="form-control" id="telefono" type="text"
+            <input class="form-control" formControlName="telefono" type="text"
             placeholder="Ingresa tu número de teléfono">
 
             <h6 class="label">Contraseña:</h6>
-            <input class="form-control" id="contrasenia" type="password"
+            <input class="form-control" formControlName="password" type="password"
+            [type]=" mostrarPsw ? 'text' : 'password'"
             placeholder="Ingresa tu contraseña">
 
             <h6 class="label">Confirma tu contraseña:</h6>
-            <input class="form-control" id="contrasenia" type="password"
+            <input class="form-control" formControlName="confirmPassword" type="password"
+            [type]=" mostrarPsw ? 'text' : 'password'"
             placeholder="Confrimar tu contraseña">
 
             <div class="form-check d-flex justify-content-center" style="margin-top: 10px;">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <input (click)="onMostrarPsw()" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault" style="margin-left: 5px !important;">
                   Mostrar contraseñas
                 </label>
@@ -51,8 +54,10 @@
 
 
         </div>
+    </form>
+
         <div class="d-flex justify-content-center">
-            <button style="margin-top: 15px; max-width: 200px !important;" class="btn btn-primary">
+            <button [disabled]="ciudadanoForm.invalid" (click)="onRegistrarCiudadano()" style="margin-top: 15px; max-width: 200px !important;" class="btn btn-primary">
                 Registrarse <i class="fas fa-user-plus"></i>
             </button>
         </div>

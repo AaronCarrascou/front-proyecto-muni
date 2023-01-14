@@ -15,6 +15,7 @@ import {MatCommonModule} from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { LoginModule } from './views/login/login.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { LoginModule } from './views/login/login.module';
     MatDatepickerModule,
     MatCommonModule,
     MatNativeDateModule,
+    FormsModule,
     PaginationModule.forRoot(),
     ToastrModule.forRoot(),
 
